@@ -25,29 +25,22 @@ Partial Class FrmProduction
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProduction))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.dtpExpDateProd = New System.Windows.Forms.DateTimePicker
+        Me.Label29 = New System.Windows.Forms.Label
+        Me.cmbSchedule = New System.Windows.Forms.ComboBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.dtpDate = New System.Windows.Forms.DateTimePicker
         Me.Label3 = New System.Windows.Forms.Label
         Me.txtCode = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
-        Me.cmbSchedule = New System.Windows.Forms.ComboBox
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.cmbNumSpec = New System.Windows.Forms.ComboBox
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.cmbTreatment = New System.Windows.Forms.ComboBox
+        Me.Label6 = New System.Windows.Forms.Label
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox
-        Me.Label7 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.txtProd4 = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.txtProd3 = New System.Windows.Forms.TextBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.txtProd2 = New System.Windows.Forms.TextBox
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.txtProd1 = New System.Windows.Forms.TextBox
-        Me.Label11 = New System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.txtProc6 = New System.Windows.Forms.TextBox
         Me.Label13 = New System.Windows.Forms.Label
@@ -61,50 +54,57 @@ Partial Class FrmProduction
         Me.Label16 = New System.Windows.Forms.Label
         Me.txtProc1 = New System.Windows.Forms.TextBox
         Me.Label17 = New System.Windows.Forms.Label
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.txtProd4 = New System.Windows.Forms.TextBox
+        Me.txtProd2 = New System.Windows.Forms.TextBox
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.Label10 = New System.Windows.Forms.Label
+        Me.txtProd1 = New System.Windows.Forms.TextBox
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.txtProd3 = New System.Windows.Forms.TextBox
+        Me.Label9 = New System.Windows.Forms.Label
         Me.Panel4 = New System.Windows.Forms.Panel
-        Me.TextBox2 = New System.Windows.Forms.TextBox
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.TextBox3 = New System.Windows.Forms.TextBox
+        Me.txtRollNylon = New System.Windows.Forms.TextBox
         Me.Label21 = New System.Windows.Forms.Label
+        Me.cmbNylon = New System.Windows.Forms.ComboBox
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.dtpInNylon = New System.Windows.Forms.DateTimePicker
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.txtSupp = New System.Windows.Forms.TextBox
+        Me.Label18 = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.txtBatch = New System.Windows.Forms.TextBox
-        Me.Label23 = New System.Windows.Forms.Label
         Me.dtpExpDate = New System.Windows.Forms.DateTimePicker
+        Me.txtBatch = New System.Windows.Forms.TextBox
         Me.Label24 = New System.Windows.Forms.Label
+        Me.Label23 = New System.Windows.Forms.Label
         Me.txtDesc = New System.Windows.Forms.TextBox
         Me.Label25 = New System.Windows.Forms.Label
+        Me.cmbCompound = New System.Windows.Forms.ComboBox
+        Me.Label22 = New System.Windows.Forms.Label
         Me.Panel5 = New System.Windows.Forms.Panel
-        Me.TextBox4 = New System.Windows.Forms.TextBox
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.TextBox5 = New System.Windows.Forms.TextBox
-        Me.Label27 = New System.Windows.Forms.Label
-        Me.TextBox6 = New System.Windows.Forms.TextBox
+        Me.txtInfo = New System.Windows.Forms.TextBox
         Me.Label28 = New System.Windows.Forms.Label
+        Me.txtQtyMtr = New System.Windows.Forms.TextBox
+        Me.Label27 = New System.Windows.Forms.Label
+        Me.txtQtyAct = New System.Windows.Forms.TextBox
+        Me.Label26 = New System.Windows.Forms.Label
         Me.Panel6 = New System.Windows.Forms.Panel
         Me.btnDelete = New System.Windows.Forms.Button
         Me.btnAdd = New System.Windows.Forms.Button
         Me.dgv = New System.Windows.Forms.DataGridView
         Me.Panel7 = New System.Windows.Forms.Panel
+        Me.btnPrint = New System.Windows.Forms.Button
+        Me.btnSign = New System.Windows.Forms.Button
         Me.btnApproved = New System.Windows.Forms.Button
         Me.btnVoid = New System.Windows.Forms.Button
         Me.btnExit = New System.Windows.Forms.Button
         Me.btnSave = New System.Windows.Forms.Button
         Me.btnCancel = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker
-        Me.Label29 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -128,7 +128,7 @@ Partial Class FrmProduction
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.DateTimePicker2)
+        Me.Panel1.Controls.Add(Me.dtpExpDateProd)
         Me.Panel1.Controls.Add(Me.Label29)
         Me.Panel1.Controls.Add(Me.cmbSchedule)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -141,6 +141,30 @@ Partial Class FrmProduction
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(999, 86)
         Me.Panel1.TabIndex = 6
+        '
+        'dtpExpDateProd
+        '
+        Me.dtpExpDateProd.Location = New System.Drawing.Point(433, 55)
+        Me.dtpExpDateProd.Name = "dtpExpDateProd"
+        Me.dtpExpDateProd.Size = New System.Drawing.Size(197, 20)
+        Me.dtpExpDateProd.TabIndex = 11
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(364, 58)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(51, 13)
+        Me.Label29.TabIndex = 10
+        Me.Label29.Text = "Exp Date"
+        '
+        'cmbSchedule
+        '
+        Me.cmbSchedule.FormattingEnabled = True
+        Me.cmbSchedule.Location = New System.Drawing.Point(97, 55)
+        Me.cmbSchedule.Name = "cmbSchedule"
+        Me.cmbSchedule.Size = New System.Drawing.Size(234, 21)
+        Me.cmbSchedule.TabIndex = 7
         '
         'Label4
         '
@@ -184,20 +208,12 @@ Partial Class FrmProduction
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Production Code"
         '
-        'cmbSchedule
-        '
-        Me.cmbSchedule.FormattingEnabled = True
-        Me.cmbSchedule.Location = New System.Drawing.Point(97, 55)
-        Me.cmbSchedule.Name = "cmbSchedule"
-        Me.cmbSchedule.Size = New System.Drawing.Size(234, 21)
-        Me.cmbSchedule.TabIndex = 7
-        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.ComboBox2)
+        Me.Panel2.Controls.Add(Me.cmbNumSpec)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
+        Me.Panel2.Controls.Add(Me.cmbTreatment)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label5)
@@ -206,6 +222,40 @@ Partial Class FrmProduction
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(999, 49)
         Me.Panel2.TabIndex = 7
+        '
+        'cmbNumSpec
+        '
+        Me.cmbNumSpec.FormattingEnabled = True
+        Me.cmbNumSpec.Location = New System.Drawing.Point(695, 12)
+        Me.cmbNumSpec.Name = "cmbNumSpec"
+        Me.cmbNumSpec.Size = New System.Drawing.Size(268, 21)
+        Me.cmbNumSpec.TabIndex = 12
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(617, 15)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(72, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Number Spec"
+        '
+        'cmbTreatment
+        '
+        Me.cmbTreatment.FormattingEnabled = True
+        Me.cmbTreatment.Location = New System.Drawing.Point(295, 13)
+        Me.cmbTreatment.Name = "cmbTreatment"
+        Me.cmbTreatment.Size = New System.Drawing.Size(268, 21)
+        Me.cmbTreatment.TabIndex = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(237, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(55, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Treatment"
         '
         'TextBox1
         '
@@ -224,40 +274,6 @@ Partial Class FrmProduction
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "No Roll"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(295, 13)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(268, 21)
-        Me.ComboBox1.TabIndex = 10
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(237, 16)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Treatment"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(695, 12)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(268, 21)
-        Me.ComboBox2.TabIndex = 12
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(617, 15)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(72, 13)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Number Spec"
-        '
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -268,92 +284,6 @@ Partial Class FrmProduction
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(999, 98)
         Me.Panel3.TabIndex = 8
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.txtProd4)
-        Me.GroupBox1.Controls.Add(Me.txtProd2)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.txtProd1)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.txtProd3)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(460, 96)
-        Me.GroupBox1.TabIndex = 9
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Product"
-        '
-        'txtProd4
-        '
-        Me.txtProd4.Location = New System.Drawing.Point(386, 19)
-        Me.txtProd4.MaxLength = 100
-        Me.txtProd4.Name = "txtProd4"
-        Me.txtProd4.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd4.TabIndex = 13
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(345, 22)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(35, 13)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Prod4"
-        '
-        'txtProd3
-        '
-        Me.txtProd3.Location = New System.Drawing.Point(273, 19)
-        Me.txtProd3.MaxLength = 4
-        Me.txtProd3.Name = "txtProd3"
-        Me.txtProd3.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd3.TabIndex = 11
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(232, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(35, 13)
-        Me.Label9.TabIndex = 10
-        Me.Label9.Text = "Prod3"
-        '
-        'txtProd2
-        '
-        Me.txtProd2.Location = New System.Drawing.Point(164, 19)
-        Me.txtProd2.MaxLength = 4
-        Me.txtProd2.Name = "txtProd2"
-        Me.txtProd2.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd2.TabIndex = 11
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(123, 22)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(35, 13)
-        Me.Label10.TabIndex = 10
-        Me.Label10.Text = "Prod2"
-        '
-        'txtProd1
-        '
-        Me.txtProd1.Location = New System.Drawing.Point(48, 19)
-        Me.txtProd1.MaxLength = 4
-        Me.txtProd1.Name = "txtProd1"
-        Me.txtProd1.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd1.TabIndex = 9
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(7, 22)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(35, 13)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "Prod1"
         '
         'GroupBox2
         '
@@ -379,6 +309,7 @@ Partial Class FrmProduction
         '
         'txtProc6
         '
+        Me.txtProc6.Enabled = False
         Me.txtProc6.Location = New System.Drawing.Point(332, 45)
         Me.txtProc6.MaxLength = 4
         Me.txtProc6.Name = "txtProc6"
@@ -396,6 +327,7 @@ Partial Class FrmProduction
         '
         'txtProc5
         '
+        Me.txtProc5.Enabled = False
         Me.txtProc5.Location = New System.Drawing.Point(332, 19)
         Me.txtProc5.MaxLength = 4
         Me.txtProc5.Name = "txtProc5"
@@ -413,6 +345,7 @@ Partial Class FrmProduction
         '
         'txtProc4
         '
+        Me.txtProc4.Enabled = False
         Me.txtProc4.Location = New System.Drawing.Point(196, 45)
         Me.txtProc4.MaxLength = 4
         Me.txtProc4.Name = "txtProc4"
@@ -430,6 +363,7 @@ Partial Class FrmProduction
         '
         'txtProc3
         '
+        Me.txtProc3.Enabled = False
         Me.txtProc3.Location = New System.Drawing.Point(196, 19)
         Me.txtProc3.MaxLength = 4
         Me.txtProc3.Name = "txtProc3"
@@ -447,6 +381,7 @@ Partial Class FrmProduction
         '
         'txtProc2
         '
+        Me.txtProc2.Enabled = False
         Me.txtProc2.Location = New System.Drawing.Point(63, 45)
         Me.txtProc2.MaxLength = 4
         Me.txtProc2.Name = "txtProc2"
@@ -464,6 +399,7 @@ Partial Class FrmProduction
         '
         'txtProc1
         '
+        Me.txtProc1.Enabled = False
         Me.txtProc1.Location = New System.Drawing.Point(63, 19)
         Me.txtProc1.MaxLength = 4
         Me.txtProc1.Name = "txtProc1"
@@ -479,16 +415,106 @@ Partial Class FrmProduction
         Me.Label17.TabIndex = 10
         Me.Label17.Text = "Process1"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtProd4)
+        Me.GroupBox1.Controls.Add(Me.txtProd2)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.txtProd1)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.txtProd3)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(460, 96)
+        Me.GroupBox1.TabIndex = 9
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Product"
+        '
+        'txtProd4
+        '
+        Me.txtProd4.Enabled = False
+        Me.txtProd4.Location = New System.Drawing.Point(386, 19)
+        Me.txtProd4.MaxLength = 100
+        Me.txtProd4.Name = "txtProd4"
+        Me.txtProd4.Size = New System.Drawing.Size(62, 20)
+        Me.txtProd4.TabIndex = 13
+        '
+        'txtProd2
+        '
+        Me.txtProd2.Enabled = False
+        Me.txtProd2.Location = New System.Drawing.Point(164, 19)
+        Me.txtProd2.MaxLength = 4
+        Me.txtProd2.Name = "txtProd2"
+        Me.txtProd2.Size = New System.Drawing.Size(62, 20)
+        Me.txtProd2.TabIndex = 11
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(345, 22)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(35, 13)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Prod4"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(123, 22)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(35, 13)
+        Me.Label10.TabIndex = 10
+        Me.Label10.Text = "Prod2"
+        '
+        'txtProd1
+        '
+        Me.txtProd1.Enabled = False
+        Me.txtProd1.Location = New System.Drawing.Point(48, 19)
+        Me.txtProd1.MaxLength = 4
+        Me.txtProd1.Name = "txtProd1"
+        Me.txtProd1.Size = New System.Drawing.Size(62, 20)
+        Me.txtProd1.TabIndex = 9
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(7, 22)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(35, 13)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Prod1"
+        '
+        'txtProd3
+        '
+        Me.txtProd3.Enabled = False
+        Me.txtProd3.Location = New System.Drawing.Point(273, 19)
+        Me.txtProd3.MaxLength = 4
+        Me.txtProd3.Name = "txtProd3"
+        Me.txtProd3.Size = New System.Drawing.Size(62, 20)
+        Me.txtProd3.TabIndex = 11
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(232, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "Prod3"
+        '
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.TextBox3)
+        Me.Panel4.Controls.Add(Me.txtRollNylon)
         Me.Panel4.Controls.Add(Me.Label21)
-        Me.Panel4.Controls.Add(Me.ComboBox3)
+        Me.Panel4.Controls.Add(Me.cmbNylon)
         Me.Panel4.Controls.Add(Me.Label20)
-        Me.Panel4.Controls.Add(Me.DateTimePicker1)
+        Me.Panel4.Controls.Add(Me.dtpInNylon)
         Me.Panel4.Controls.Add(Me.Label19)
-        Me.Panel4.Controls.Add(Me.TextBox2)
+        Me.Panel4.Controls.Add(Me.txtSupp)
         Me.Panel4.Controls.Add(Me.Label18)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 272)
@@ -496,63 +522,13 @@ Partial Class FrmProduction
         Me.Panel4.Size = New System.Drawing.Size(999, 80)
         Me.Panel4.TabIndex = 9
         '
-        'TextBox2
+        'txtRollNylon
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(90, 21)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox2.TabIndex = 15
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(11, 24)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 13)
-        Me.Label18.TabIndex = 14
-        Me.Label18.Text = "Supplier"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(89, 47)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(190, 20)
-        Me.DateTimePicker1.TabIndex = 11
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(11, 47)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(72, 13)
-        Me.Label19.TabIndex = 10
-        Me.Label19.Text = "Date In Nylon"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(421, 24)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(268, 21)
-        Me.ComboBox3.TabIndex = 14
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(343, 27)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(34, 13)
-        Me.Label20.TabIndex = 15
-        Me.Label20.Text = "Nylon"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(421, 51)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox3.TabIndex = 15
+        Me.txtRollNylon.Enabled = False
+        Me.txtRollNylon.Location = New System.Drawing.Point(421, 51)
+        Me.txtRollNylon.Name = "txtRollNylon"
+        Me.txtRollNylon.Size = New System.Drawing.Size(136, 20)
+        Me.txtRollNylon.TabIndex = 15
         '
         'Label21
         '
@@ -563,6 +539,56 @@ Partial Class FrmProduction
         Me.Label21.TabIndex = 14
         Me.Label21.Text = "No Roll Nylon"
         '
+        'cmbNylon
+        '
+        Me.cmbNylon.FormattingEnabled = True
+        Me.cmbNylon.Location = New System.Drawing.Point(421, 24)
+        Me.cmbNylon.Name = "cmbNylon"
+        Me.cmbNylon.Size = New System.Drawing.Size(268, 21)
+        Me.cmbNylon.TabIndex = 14
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(343, 27)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(34, 13)
+        Me.Label20.TabIndex = 15
+        Me.Label20.Text = "Nylon"
+        '
+        'dtpInNylon
+        '
+        Me.dtpInNylon.Location = New System.Drawing.Point(89, 47)
+        Me.dtpInNylon.Name = "dtpInNylon"
+        Me.dtpInNylon.Size = New System.Drawing.Size(190, 20)
+        Me.dtpInNylon.TabIndex = 11
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(11, 47)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(72, 13)
+        Me.Label19.TabIndex = 10
+        Me.Label19.Text = "Date In Nylon"
+        '
+        'txtSupp
+        '
+        Me.txtSupp.Enabled = False
+        Me.txtSupp.Location = New System.Drawing.Point(90, 21)
+        Me.txtSupp.Name = "txtSupp"
+        Me.txtSupp.Size = New System.Drawing.Size(136, 20)
+        Me.txtSupp.TabIndex = 15
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(11, 24)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(45, 13)
+        Me.Label18.TabIndex = 14
+        Me.Label18.Text = "Supplier"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.dtpExpDate)
@@ -571,7 +597,7 @@ Partial Class FrmProduction
         Me.GroupBox3.Controls.Add(Me.Label23)
         Me.GroupBox3.Controls.Add(Me.txtDesc)
         Me.GroupBox3.Controls.Add(Me.Label25)
-        Me.GroupBox3.Controls.Add(Me.ComboBox4)
+        Me.GroupBox3.Controls.Add(Me.cmbCompound)
         Me.GroupBox3.Controls.Add(Me.Label22)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox3.Location = New System.Drawing.Point(0, 352)
@@ -581,46 +607,22 @@ Partial Class FrmProduction
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "COMPOUND"
         '
-        'ComboBox4
+        'dtpExpDate
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(90, 29)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(242, 21)
-        Me.ComboBox4.TabIndex = 16
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(12, 32)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(58, 13)
-        Me.Label22.TabIndex = 17
-        Me.Label22.Text = "Compound"
+        Me.dtpExpDate.Enabled = False
+        Me.dtpExpDate.Location = New System.Drawing.Point(443, 52)
+        Me.dtpExpDate.Name = "dtpExpDate"
+        Me.dtpExpDate.Size = New System.Drawing.Size(242, 20)
+        Me.dtpExpDate.TabIndex = 14
         '
         'txtBatch
         '
+        Me.txtBatch.Enabled = False
         Me.txtBatch.Location = New System.Drawing.Point(90, 56)
         Me.txtBatch.MaxLength = 25
         Me.txtBatch.Name = "txtBatch"
         Me.txtBatch.Size = New System.Drawing.Size(242, 20)
         Me.txtBatch.TabIndex = 19
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(12, 59)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(35, 13)
-        Me.Label23.TabIndex = 18
-        Me.Label23.Text = "Batch"
-        '
-        'dtpExpDate
-        '
-        Me.dtpExpDate.Location = New System.Drawing.Point(443, 52)
-        Me.dtpExpDate.Name = "dtpExpDate"
-        Me.dtpExpDate.Size = New System.Drawing.Size(242, 20)
-        Me.dtpExpDate.TabIndex = 14
         '
         'Label24
         '
@@ -631,8 +633,18 @@ Partial Class FrmProduction
         Me.Label24.TabIndex = 13
         Me.Label24.Text = "Expired Date"
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(12, 59)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(35, 13)
+        Me.Label23.TabIndex = 18
+        Me.Label23.Text = "Batch"
+        '
         'txtDesc
         '
+        Me.txtDesc.Enabled = False
         Me.txtDesc.Location = New System.Drawing.Point(443, 25)
         Me.txtDesc.MaxLength = 100
         Me.txtDesc.Name = "txtDesc"
@@ -648,14 +660,31 @@ Partial Class FrmProduction
         Me.Label25.TabIndex = 11
         Me.Label25.Text = "Tgl/Bln/Grp/Line"
         '
+        'cmbCompound
+        '
+        Me.cmbCompound.FormattingEnabled = True
+        Me.cmbCompound.Location = New System.Drawing.Point(90, 29)
+        Me.cmbCompound.Name = "cmbCompound"
+        Me.cmbCompound.Size = New System.Drawing.Size(242, 21)
+        Me.cmbCompound.TabIndex = 16
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(12, 32)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(58, 13)
+        Me.Label22.TabIndex = 17
+        Me.Label22.Text = "Compound"
+        '
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.TextBox6)
+        Me.Panel5.Controls.Add(Me.txtInfo)
         Me.Panel5.Controls.Add(Me.Label28)
-        Me.Panel5.Controls.Add(Me.TextBox5)
+        Me.Panel5.Controls.Add(Me.txtQtyMtr)
         Me.Panel5.Controls.Add(Me.Label27)
-        Me.Panel5.Controls.Add(Me.TextBox4)
+        Me.Panel5.Controls.Add(Me.txtQtyAct)
         Me.Panel5.Controls.Add(Me.Label26)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 445)
@@ -663,30 +692,30 @@ Partial Class FrmProduction
         Me.Panel5.Size = New System.Drawing.Size(999, 38)
         Me.Panel5.TabIndex = 11
         '
-        'TextBox4
+        'txtInfo
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(89, 5)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox4.TabIndex = 13
+        Me.txtInfo.Enabled = False
+        Me.txtInfo.Location = New System.Drawing.Point(602, 5)
+        Me.txtInfo.Name = "txtInfo"
+        Me.txtInfo.Size = New System.Drawing.Size(385, 20)
+        Me.txtInfo.TabIndex = 17
         '
-        'Label26
+        'Label28
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(11, 8)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(56, 13)
-        Me.Label26.TabIndex = 12
-        Me.Label26.Text = "Qty Actual"
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(524, 8)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(59, 13)
+        Me.Label28.TabIndex = 16
+        Me.Label28.Text = "Information"
         '
-        'TextBox5
+        'txtQtyMtr
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(333, 5)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox5.TabIndex = 15
+        Me.txtQtyMtr.Enabled = False
+        Me.txtQtyMtr.Location = New System.Drawing.Point(333, 5)
+        Me.txtQtyMtr.Name = "txtQtyMtr"
+        Me.txtQtyMtr.Size = New System.Drawing.Size(136, 20)
+        Me.txtQtyMtr.TabIndex = 15
         '
         'Label27
         '
@@ -697,22 +726,22 @@ Partial Class FrmProduction
         Me.Label27.TabIndex = 14
         Me.Label27.Text = "Qty Meter"
         '
-        'TextBox6
+        'txtQtyAct
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(602, 5)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(385, 20)
-        Me.TextBox6.TabIndex = 17
+        Me.txtQtyAct.Enabled = False
+        Me.txtQtyAct.Location = New System.Drawing.Point(89, 5)
+        Me.txtQtyAct.Name = "txtQtyAct"
+        Me.txtQtyAct.Size = New System.Drawing.Size(136, 20)
+        Me.txtQtyAct.TabIndex = 13
         '
-        'Label28
+        'Label26
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(524, 8)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(59, 13)
-        Me.Label28.TabIndex = 16
-        Me.Label28.Text = "Information"
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(11, 8)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(56, 13)
+        Me.Label26.TabIndex = 12
+        Me.Label26.Text = "Qty Actual"
         '
         'Panel6
         '
@@ -755,8 +784,8 @@ Partial Class FrmProduction
         'Panel7
         '
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel7.Controls.Add(Me.Button2)
-        Me.Panel7.Controls.Add(Me.Button1)
+        Me.Panel7.Controls.Add(Me.btnPrint)
+        Me.Panel7.Controls.Add(Me.btnSign)
         Me.Panel7.Controls.Add(Me.btnApproved)
         Me.Panel7.Controls.Add(Me.btnVoid)
         Me.Panel7.Controls.Add(Me.btnExit)
@@ -767,6 +796,24 @@ Partial Class FrmProduction
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(999, 48)
         Me.Panel7.TabIndex = 14
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(643, 15)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(106, 29)
+        Me.btnPrint.TabIndex = 6
+        Me.btnPrint.Text = "Print Treatment"
+        Me.btnPrint.UseVisualStyleBackColor = True
+        '
+        'btnSign
+        '
+        Me.btnSign.Location = New System.Drawing.Point(755, 15)
+        Me.btnSign.Name = "btnSign"
+        Me.btnSign.Size = New System.Drawing.Size(75, 29)
+        Me.btnSign.TabIndex = 5
+        Me.btnSign.Text = "Sign"
+        Me.btnSign.UseVisualStyleBackColor = True
         '
         'btnApproved
         '
@@ -822,40 +869,6 @@ Partial Class FrmProduction
         Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(755, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 29)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Sign"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(643, 15)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 29)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Print Treatment"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(433, 55)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(197, 20)
-        Me.DateTimePicker2.TabIndex = 11
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(364, 58)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(51, 13)
-        Me.Label29.TabIndex = 10
-        Me.Label29.Text = "Exp Date"
-        '
         'FrmProduction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -884,10 +897,10 @@ Partial Class FrmProduction
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -909,11 +922,11 @@ Partial Class FrmProduction
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTreatment As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbNumSpec As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -939,16 +952,16 @@ Partial Class FrmProduction
     Friend WithEvents txtProc1 As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpInNylon As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtSupp As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents txtRollNylon As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbNylon As System.Windows.Forms.ComboBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbCompound As System.Windows.Forms.ComboBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents txtBatch As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
@@ -957,11 +970,11 @@ Partial Class FrmProduction
     Friend WithEvents txtDesc As System.Windows.Forms.TextBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txtInfo As System.Windows.Forms.TextBox
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtQtyMtr As System.Windows.Forms.TextBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtQtyAct As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
     Friend WithEvents btnDelete As System.Windows.Forms.Button
@@ -973,8 +986,8 @@ Partial Class FrmProduction
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnSign As System.Windows.Forms.Button
+    Friend WithEvents btnPrint As System.Windows.Forms.Button
+    Friend WithEvents dtpExpDateProd As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label29 As System.Windows.Forms.Label
 End Class
