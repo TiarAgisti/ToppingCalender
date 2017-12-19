@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 Public Class FrmListSchedule
     Dim queryList As String = "Select ScheduleCode,ScheduleDate,Revision,Case When Status = 1 Then 'New'" & _
-                                "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & _
+                                "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' When Status = 4 Then 'Production' Else 'Void' End StatDesc" & _
                                 "From Schedules"
     Sub HeaderGrid()
         dgv.Columns(0).HeaderText = "Schedule Code"

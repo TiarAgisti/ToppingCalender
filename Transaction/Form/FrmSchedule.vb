@@ -6,7 +6,7 @@ Public Class FrmSchedule
     Dim intbaris As Integer
 
     Sub GenerateCode()
-        Dim query As String = "Select ScheduleCode Form Schedule Order By ScheduleCode Desc LIMIT 1"
+        Dim query As String = "Select ScheduleCode From Schedule Order By ScheduleCode Desc LIMIT 1"
         Dim dac As DataAccess = New DataAccess
         Dim dr As MySqlDataReader
         Dim strCode As String
@@ -21,10 +21,10 @@ Public Class FrmSchedule
             Else
                 intSearch = Microsoft.VisualBasic.Right(dr.GetString(0), 6)
                 If Microsoft.VisualBasic.Left(dr.GetString(0), 8) <> "SCH/" & DateTime.Now.Year & "/" Then
-                    strCode = "PO/" & DateTime.Now.Year & "/" & "0000001"
+                    strCode = "SCH/" & DateTime.Now.Year & "/" & "0000001"
                 Else
                     intCount = Microsoft.VisualBasic.Right(dr.GetString(0), 6) + 1
-                    strCode = "PO/" & DateTime.Now.Year & "/" & Microsoft.VisualBasic.Right("000000" & intCount, 6)
+                    strCode = "SCH/" & DateTime.Now.Year & "/" & Microsoft.VisualBasic.Right("000000" & intCount, 6)
                 End If
             End If
         Catch ex As Exception
@@ -227,7 +227,7 @@ Public Class FrmSchedule
             GridDetails()
             dr = dac.ExecuteReader(queryDetails)
             While dr.Read
-                If Not IsDBNull(dr.Item("NoPO")) Then
+                If Not IsDBNull(dr.Item("ScheduleCode")) Then
                     With dgv
                         .Rows.Add()
                         .Item(0, intbaris).Value = dr.Item("TreatmentCode")

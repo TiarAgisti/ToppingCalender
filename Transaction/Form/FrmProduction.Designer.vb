@@ -38,7 +38,7 @@ Partial Class FrmProduction
         Me.Label7 = New System.Windows.Forms.Label
         Me.cmbTreatment = New System.Windows.Forms.ComboBox
         Me.Label6 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.txtNoRoll = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
@@ -215,7 +215,7 @@ Partial Class FrmProduction
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.cmbTreatment)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.txtNoRoll)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 125)
@@ -257,13 +257,13 @@ Partial Class FrmProduction
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Treatment"
         '
-        'TextBox1
+        'txtNoRoll
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(59, 13)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox1.TabIndex = 11
+        Me.txtNoRoll.Enabled = False
+        Me.txtNoRoll.Location = New System.Drawing.Point(59, 13)
+        Me.txtNoRoll.Name = "txtNoRoll"
+        Me.txtNoRoll.Size = New System.Drawing.Size(136, 20)
+        Me.txtNoRoll.TabIndex = 11
         '
         'Label5
         '
@@ -924,7 +924,7 @@ Partial Class FrmProduction
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents cmbTreatment As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNoRoll As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents cmbNumSpec As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
