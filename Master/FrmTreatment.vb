@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmTreatment
-    Dim queryList As String = "Select treatmentcode,description from treatment where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -38,6 +38,7 @@ Public Class FrmTreatment
     End Sub
     Sub RetrieveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select treatmentcode,description from treatment where isactive = 1"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -49,7 +50,8 @@ Public Class FrmTreatment
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
-        queryList += " And treatmentcode LIKE '%" & txtCari.Text & "%'"
+        queryList = "Select treatmentcode,description from treatment where isactive = 1" & vbCrLf
+        queryList += "And treatmentcode LIKE '%" & txtCari.Text & "%'"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True

@@ -40,7 +40,7 @@
         If txt.Text = "" Then
             txt.Text = ""
         Else
-            If Not IsNumeric(txt) Then
+            If Not IsNumeric(txt.Text) Then
                 txt.Clear()
             End If
         End If

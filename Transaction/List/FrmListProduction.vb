@@ -1,26 +1,29 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmListProduction
-    Dim queryList As String = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,Shift,Case When Status = 1 Then 'New'" & _
-                                "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & _
-                                "From Productions"
+    Dim queryList As String
 
     Sub HeaderGrid()
         dgv.Columns(0).HeaderText = "Production Code"
+        dgv.Columns(0).Width = 150
         dgv.Columns(1).HeaderText = "Date"
         dgv.Columns(1).DefaultCellStyle.Format = "dd-MMM-yyyy"
         dgv.Columns(2).HeaderText = "Expired Date"
         dgv.Columns(2).DefaultCellStyle.Format = "dd-MMM-yyyy"
         dgv.Columns(3).HeaderText = "Schedule Code"
-        dgv.Columns(4).HeaderText = "Shift"
-        dgv.Columns(5).HeaderText = "Status"
+        dgv.Columns(3).Width = 150
+        dgv.Columns(4).HeaderText = "Status"
     End Sub
 
     Sub RetriveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
+        queryList += "From Productions"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
+            HeaderGrid()
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -28,18 +31,22 @@ Public Class FrmListProduction
     End Sub
 
     Sub RetrieveListSearch()
+        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
+        queryList += "From Productions" & vbCrLf
+
         If rdCode.Checked = True Then
             If Trim(txtCode.Text) = "" Then
                 MsgBoxWarning("Please fill Production Code")
                 Exit Sub
             Else
-                queryList += " And ProductionCode = '" & txtCode.Text & "'"
+                queryList += "Where ProductionCode = '" & txtCode.Text & "'"
             End If
 
         End If
 
         If rdDate.Checked = True Then
-            queryList += " And ProductionDate = '" & Format(dtpDate.Value, "yyyy-MM-dd") & "'"
+            queryList += "Where ProductionDate = '" & Format(dtpDate.Value, "yyyy-MM-dd") & "'"
         End If
 
         Dim dac As DataAccess = New DataAccess
@@ -73,5 +80,9 @@ Public Class FrmListProduction
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
         Close()
+    End Sub
+
+    Private Sub FrmListProduction_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RetriveList()
     End Sub
 End Class

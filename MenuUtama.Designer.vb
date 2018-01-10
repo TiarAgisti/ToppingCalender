@@ -25,6 +25,8 @@ Partial Class MenuUtama
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuUtama))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.menuExit = New System.Windows.Forms.Button
+        Me.menuChangePass = New System.Windows.Forms.Button
         Me.menuSetting = New System.Windows.Forms.Button
         Me.menuRptScrap = New System.Windows.Forms.Button
         Me.menuRptProd = New System.Windows.Forms.Button
@@ -46,8 +48,6 @@ Partial Class MenuUtama
         Me.Label4 = New System.Windows.Forms.Label
         Me.user = New System.Windows.Forms.Label
         Me.tgl = New System.Windows.Forms.Label
-        Me.menuChangePass = New System.Windows.Forms.Button
-        Me.menuExit = New System.Windows.Forms.Button
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -90,18 +90,44 @@ Partial Class MenuUtama
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 830)
+        Me.Panel1.Size = New System.Drawing.Size(200, 605)
         Me.Panel1.TabIndex = 1
+        '
+        'menuExit
+        '
+        Me.menuExit.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.menuExit.Dock = System.Windows.Forms.DockStyle.Top
+        Me.menuExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menuExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuExit.Location = New System.Drawing.Point(0, 525)
+        Me.menuExit.Name = "menuExit"
+        Me.menuExit.Size = New System.Drawing.Size(198, 28)
+        Me.menuExit.TabIndex = 40
+        Me.menuExit.Text = "Exit"
+        Me.menuExit.UseVisualStyleBackColor = False
+        '
+        'menuChangePass
+        '
+        Me.menuChangePass.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.menuChangePass.Dock = System.Windows.Forms.DockStyle.Top
+        Me.menuChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.menuChangePass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuChangePass.Location = New System.Drawing.Point(0, 502)
+        Me.menuChangePass.Name = "menuChangePass"
+        Me.menuChangePass.Size = New System.Drawing.Size(198, 23)
+        Me.menuChangePass.TabIndex = 39
+        Me.menuChangePass.Text = "Change Password"
+        Me.menuChangePass.UseVisualStyleBackColor = False
         '
         'menuSetting
         '
         Me.menuSetting.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.menuSetting.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menuSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuSetting.Location = New System.Drawing.Point(0, 627)
+        Me.menuSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuSetting.Location = New System.Drawing.Point(0, 474)
         Me.menuSetting.Name = "menuSetting"
-        Me.menuSetting.Size = New System.Drawing.Size(198, 36)
+        Me.menuSetting.Size = New System.Drawing.Size(198, 28)
         Me.menuSetting.TabIndex = 22
         Me.menuSetting.Text = "Setting"
         Me.menuSetting.UseVisualStyleBackColor = False
@@ -111,10 +137,10 @@ Partial Class MenuUtama
         Me.menuRptScrap.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuRptScrap.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuRptScrap.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuRptScrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuRptScrap.Location = New System.Drawing.Point(0, 597)
+        Me.menuRptScrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuRptScrap.Location = New System.Drawing.Point(0, 451)
         Me.menuRptScrap.Name = "menuRptScrap"
-        Me.menuRptScrap.Size = New System.Drawing.Size(198, 30)
+        Me.menuRptScrap.Size = New System.Drawing.Size(198, 23)
         Me.menuRptScrap.TabIndex = 38
         Me.menuRptScrap.Text = "Report Scrap Production"
         Me.menuRptScrap.UseVisualStyleBackColor = False
@@ -124,10 +150,10 @@ Partial Class MenuUtama
         Me.menuRptProd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuRptProd.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuRptProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuRptProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuRptProd.Location = New System.Drawing.Point(0, 567)
+        Me.menuRptProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuRptProd.Location = New System.Drawing.Point(0, 428)
         Me.menuRptProd.Name = "menuRptProd"
-        Me.menuRptProd.Size = New System.Drawing.Size(198, 30)
+        Me.menuRptProd.Size = New System.Drawing.Size(198, 23)
         Me.menuRptProd.TabIndex = 37
         Me.menuRptProd.Text = "Report Production"
         Me.menuRptProd.UseVisualStyleBackColor = False
@@ -137,10 +163,10 @@ Partial Class MenuUtama
         Me.menuRptSche.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuRptSche.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuRptSche.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuRptSche.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuRptSche.Location = New System.Drawing.Point(0, 537)
+        Me.menuRptSche.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuRptSche.Location = New System.Drawing.Point(0, 405)
         Me.menuRptSche.Name = "menuRptSche"
-        Me.menuRptSche.Size = New System.Drawing.Size(198, 30)
+        Me.menuRptSche.Size = New System.Drawing.Size(198, 23)
         Me.menuRptSche.TabIndex = 36
         Me.menuRptSche.Text = "Report Schedule"
         Me.menuRptSche.UseVisualStyleBackColor = False
@@ -150,10 +176,10 @@ Partial Class MenuUtama
         Me.menuReport.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.menuReport.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menuReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuReport.Location = New System.Drawing.Point(0, 501)
+        Me.menuReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuReport.Location = New System.Drawing.Point(0, 377)
         Me.menuReport.Name = "menuReport"
-        Me.menuReport.Size = New System.Drawing.Size(198, 36)
+        Me.menuReport.Size = New System.Drawing.Size(198, 28)
         Me.menuReport.TabIndex = 35
         Me.menuReport.Text = "Report"
         Me.menuReport.UseVisualStyleBackColor = False
@@ -163,10 +189,10 @@ Partial Class MenuUtama
         Me.menuScrap.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuScrap.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuScrap.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuScrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuScrap.Location = New System.Drawing.Point(0, 471)
+        Me.menuScrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuScrap.Location = New System.Drawing.Point(0, 354)
         Me.menuScrap.Name = "menuScrap"
-        Me.menuScrap.Size = New System.Drawing.Size(198, 30)
+        Me.menuScrap.Size = New System.Drawing.Size(198, 23)
         Me.menuScrap.TabIndex = 34
         Me.menuScrap.Text = "Scrap Production"
         Me.menuScrap.UseVisualStyleBackColor = False
@@ -176,10 +202,10 @@ Partial Class MenuUtama
         Me.menuProd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuProd.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuProd.Location = New System.Drawing.Point(0, 441)
+        Me.menuProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuProd.Location = New System.Drawing.Point(0, 331)
         Me.menuProd.Name = "menuProd"
-        Me.menuProd.Size = New System.Drawing.Size(198, 30)
+        Me.menuProd.Size = New System.Drawing.Size(198, 23)
         Me.menuProd.TabIndex = 33
         Me.menuProd.Text = "Production"
         Me.menuProd.UseVisualStyleBackColor = False
@@ -189,10 +215,10 @@ Partial Class MenuUtama
         Me.menuSchedule.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuSchedule.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuSchedule.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuSchedule.Location = New System.Drawing.Point(0, 411)
+        Me.menuSchedule.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuSchedule.Location = New System.Drawing.Point(0, 308)
         Me.menuSchedule.Name = "menuSchedule"
-        Me.menuSchedule.Size = New System.Drawing.Size(198, 30)
+        Me.menuSchedule.Size = New System.Drawing.Size(198, 23)
         Me.menuSchedule.TabIndex = 32
         Me.menuSchedule.Text = "Schedule"
         Me.menuSchedule.UseVisualStyleBackColor = False
@@ -202,10 +228,10 @@ Partial Class MenuUtama
         Me.menuTrans.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.menuTrans.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menuTrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuTrans.Location = New System.Drawing.Point(0, 375)
+        Me.menuTrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuTrans.Location = New System.Drawing.Point(0, 280)
         Me.menuTrans.Name = "menuTrans"
-        Me.menuTrans.Size = New System.Drawing.Size(198, 36)
+        Me.menuTrans.Size = New System.Drawing.Size(198, 28)
         Me.menuTrans.TabIndex = 16
         Me.menuTrans.Text = "Transaction"
         Me.menuTrans.UseVisualStyleBackColor = False
@@ -215,10 +241,10 @@ Partial Class MenuUtama
         Me.menuCompound.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuCompound.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuCompound.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuCompound.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuCompound.Location = New System.Drawing.Point(0, 345)
+        Me.menuCompound.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuCompound.Location = New System.Drawing.Point(0, 257)
         Me.menuCompound.Name = "menuCompound"
-        Me.menuCompound.Size = New System.Drawing.Size(198, 30)
+        Me.menuCompound.Size = New System.Drawing.Size(198, 23)
         Me.menuCompound.TabIndex = 12
         Me.menuCompound.Text = "Compound"
         Me.menuCompound.UseVisualStyleBackColor = False
@@ -228,10 +254,10 @@ Partial Class MenuUtama
         Me.menuNumSpec.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuNumSpec.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuNumSpec.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuNumSpec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuNumSpec.Location = New System.Drawing.Point(0, 315)
+        Me.menuNumSpec.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuNumSpec.Location = New System.Drawing.Point(0, 234)
         Me.menuNumSpec.Name = "menuNumSpec"
-        Me.menuNumSpec.Size = New System.Drawing.Size(198, 30)
+        Me.menuNumSpec.Size = New System.Drawing.Size(198, 23)
         Me.menuNumSpec.TabIndex = 28
         Me.menuNumSpec.Text = "Number Spec"
         Me.menuNumSpec.UseVisualStyleBackColor = False
@@ -241,10 +267,10 @@ Partial Class MenuUtama
         Me.menuMachine.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuMachine.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuMachine.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuMachine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuMachine.Location = New System.Drawing.Point(0, 285)
+        Me.menuMachine.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuMachine.Location = New System.Drawing.Point(0, 211)
         Me.menuMachine.Name = "menuMachine"
-        Me.menuMachine.Size = New System.Drawing.Size(198, 30)
+        Me.menuMachine.Size = New System.Drawing.Size(198, 23)
         Me.menuMachine.TabIndex = 27
         Me.menuMachine.Text = "Machine"
         Me.menuMachine.UseVisualStyleBackColor = False
@@ -254,10 +280,10 @@ Partial Class MenuUtama
         Me.menuNylon.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuNylon.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuNylon.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuNylon.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuNylon.Location = New System.Drawing.Point(0, 255)
+        Me.menuNylon.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuNylon.Location = New System.Drawing.Point(0, 188)
         Me.menuNylon.Name = "menuNylon"
-        Me.menuNylon.Size = New System.Drawing.Size(198, 30)
+        Me.menuNylon.Size = New System.Drawing.Size(198, 23)
         Me.menuNylon.TabIndex = 26
         Me.menuNylon.Text = "Nylon"
         Me.menuNylon.UseVisualStyleBackColor = False
@@ -267,10 +293,10 @@ Partial Class MenuUtama
         Me.menuTreatment.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuTreatment.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuTreatment.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuTreatment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuTreatment.Location = New System.Drawing.Point(0, 225)
+        Me.menuTreatment.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuTreatment.Location = New System.Drawing.Point(0, 165)
         Me.menuTreatment.Name = "menuTreatment"
-        Me.menuTreatment.Size = New System.Drawing.Size(198, 30)
+        Me.menuTreatment.Size = New System.Drawing.Size(198, 23)
         Me.menuTreatment.TabIndex = 25
         Me.menuTreatment.Text = "Treatment"
         Me.menuTreatment.UseVisualStyleBackColor = False
@@ -280,10 +306,10 @@ Partial Class MenuUtama
         Me.menuUser.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.menuUser.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuUser.Location = New System.Drawing.Point(0, 195)
+        Me.menuUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuUser.Location = New System.Drawing.Point(0, 142)
         Me.menuUser.Name = "menuUser"
-        Me.menuUser.Size = New System.Drawing.Size(198, 30)
+        Me.menuUser.Size = New System.Drawing.Size(198, 23)
         Me.menuUser.TabIndex = 24
         Me.menuUser.Text = "User"
         Me.menuUser.UseVisualStyleBackColor = False
@@ -293,10 +319,10 @@ Partial Class MenuUtama
         Me.menuMaster.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.menuMaster.Dock = System.Windows.Forms.DockStyle.Top
         Me.menuMaster.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menuMaster.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuMaster.Location = New System.Drawing.Point(0, 159)
+        Me.menuMaster.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuMaster.Location = New System.Drawing.Point(0, 114)
         Me.menuMaster.Name = "menuMaster"
-        Me.menuMaster.Size = New System.Drawing.Size(198, 36)
+        Me.menuMaster.Size = New System.Drawing.Size(198, 28)
         Me.menuMaster.TabIndex = 1
         Me.menuMaster.Text = "Master"
         Me.menuMaster.UseVisualStyleBackColor = False
@@ -309,7 +335,7 @@ Partial Class MenuUtama
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(198, 159)
+        Me.Panel2.Size = New System.Drawing.Size(198, 114)
         Me.Panel2.TabIndex = 0
         '
         'Panel3
@@ -323,14 +349,14 @@ Partial Class MenuUtama
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(200, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1072, 50)
+        Me.Panel3.Size = New System.Drawing.Size(828, 50)
         Me.Panel3.TabIndex = 2
         '
         'Label4
         '
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(724, 0)
+        Me.Label4.Location = New System.Drawing.Point(480, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(93, 48)
         Me.Label4.TabIndex = 3
@@ -341,7 +367,7 @@ Partial Class MenuUtama
         '
         Me.user.Dock = System.Windows.Forms.DockStyle.Right
         Me.user.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.user.Location = New System.Drawing.Point(817, 0)
+        Me.user.Location = New System.Drawing.Point(573, 0)
         Me.user.Name = "user"
         Me.user.Size = New System.Drawing.Size(136, 48)
         Me.user.TabIndex = 2
@@ -352,38 +378,12 @@ Partial Class MenuUtama
         '
         Me.tgl.Dock = System.Windows.Forms.DockStyle.Right
         Me.tgl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tgl.Location = New System.Drawing.Point(953, 0)
+        Me.tgl.Location = New System.Drawing.Point(709, 0)
         Me.tgl.Name = "tgl"
         Me.tgl.Size = New System.Drawing.Size(117, 48)
         Me.tgl.TabIndex = 1
         Me.tgl.Text = "Label2"
         Me.tgl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'menuChangePass
-        '
-        Me.menuChangePass.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.menuChangePass.Dock = System.Windows.Forms.DockStyle.Top
-        Me.menuChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.menuChangePass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuChangePass.Location = New System.Drawing.Point(0, 663)
-        Me.menuChangePass.Name = "menuChangePass"
-        Me.menuChangePass.Size = New System.Drawing.Size(198, 30)
-        Me.menuChangePass.TabIndex = 39
-        Me.menuChangePass.Text = "Change Password"
-        Me.menuChangePass.UseVisualStyleBackColor = False
-        '
-        'menuExit
-        '
-        Me.menuExit.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.menuExit.Dock = System.Windows.Forms.DockStyle.Top
-        Me.menuExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menuExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuExit.Location = New System.Drawing.Point(0, 693)
-        Me.menuExit.Name = "menuExit"
-        Me.menuExit.Size = New System.Drawing.Size(198, 36)
-        Me.menuExit.TabIndex = 40
-        Me.menuExit.Text = "Exit"
-        Me.menuExit.UseVisualStyleBackColor = False
         '
         'MenuUtama
         '
@@ -392,7 +392,7 @@ Partial Class MenuUtama
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1272, 830)
+        Me.ClientSize = New System.Drawing.Size(1028, 605)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

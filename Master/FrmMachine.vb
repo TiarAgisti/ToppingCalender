@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmMachine
-    Dim queryList As String = "Select machinecode,description from machine_productions where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -38,6 +38,7 @@ Public Class FrmMachine
     End Sub
     Sub RetrieveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select machinecode,description from machine_productions where isactive = 1"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -49,7 +50,9 @@ Public Class FrmMachine
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select machinecode,description from machine_productions where isactive = 1"
         queryList += " And MachineCode LIKE '%" & txtCari.Text & "%'"
+
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True

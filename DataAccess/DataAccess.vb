@@ -41,7 +41,7 @@ Public Class DataAccess
             reader = ExecuteReader(query)
             reader.Read()
 
-            If IsDBNull(reader.Item(0)) Then
+            If Not reader.HasRows Then
                 urutan = code + "001"
             Else
                 hitung = Microsoft.VisualBasic.Right(reader.Item(0), 3) + 1
@@ -129,7 +129,7 @@ Public Class DataAccess
         Using myConnection As MySqlConnection = New MySqlConnection(ConnectionString())
             myConnection.Open()
             Using myCommand As MySqlCommand = myConnection.CreateCommand
-                Using myTransaction As MySqlTransaction = myConnection.BeginTransaction("Master Detail")
+                Using myTransaction As MySqlTransaction = myConnection.BeginTransaction()
                     myCommand.Connection = myConnection
                     myCommand.Transaction = myTransaction
                     Try
@@ -141,6 +141,7 @@ Public Class DataAccess
                         myTransaction.Commit()
                         myConnection.Close()
                         myCommand.Dispose()
+                        Return True
                     Catch ex As Exception
                         myConnection.Close()
                         myCommand.Dispose()

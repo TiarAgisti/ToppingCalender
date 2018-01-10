@@ -6,7 +6,7 @@ Public Class FrmSchedule
     Dim intbaris As Integer
 
     Sub GenerateCode()
-        Dim query As String = "Select ScheduleCode From Schedule Order By ScheduleCode Desc LIMIT 1"
+        Dim query As String = "Select ScheduleCode From Schedules Order By ScheduleCode Desc LIMIT 1"
         Dim dac As DataAccess = New DataAccess
         Dim dr As MySqlDataReader
         Dim strCode As String
@@ -17,16 +17,17 @@ Public Class FrmSchedule
             dr = dac.ExecuteReader(query)
             dr.Read()
             If Not dr.HasRows Then
-                strCode = "SCH/" & DateTime.Now.Year & "/" & "0000001"
+                strCode = "SCH/" & DateTime.Now.Year & "/" & "000001"
             Else
                 intSearch = Microsoft.VisualBasic.Right(dr.GetString(0), 6)
-                If Microsoft.VisualBasic.Left(dr.GetString(0), 8) <> "SCH/" & DateTime.Now.Year & "/" Then
-                    strCode = "SCH/" & DateTime.Now.Year & "/" & "0000001"
+                If Microsoft.VisualBasic.Left(dr.GetString(0), 9) <> "SCH/" & DateTime.Now.Year & "/" Then
+                    strCode = "SCH/" & DateTime.Now.Year & "/" & "000001"
                 Else
                     intCount = Microsoft.VisualBasic.Right(dr.GetString(0), 6) + 1
                     strCode = "SCH/" & DateTime.Now.Year & "/" & Microsoft.VisualBasic.Right("000000" & intCount, 6)
                 End If
             End If
+            txtCode.Text = strCode
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -122,6 +123,7 @@ Public Class FrmSchedule
     End Sub
 
     Sub GridDetails()
+        dgv.Columns.Clear()
         Try
             With dgv
                 .Columns.Add(0, "Treatment")
@@ -141,12 +143,12 @@ Public Class FrmSchedule
                 .Columns.Add(14, "Roll Shift 2")
                 .Columns.Add(15, "Meter Shift 2")
                 .Columns.Add(16, "Description Shift 2")
-                .Columns.Add(17, "Actual Shift 2")
-                .Columns.Add(18, "Cons Shift 2")
-                .Columns.Add(19, "SCH Roll Shift 2")
-                .Columns.Add(20, "Roll Shift 2")
-                .Columns.Add(21, "Meter Shift 2")
-                .Columns.Add(22, "Description Shift 2")
+                .Columns.Add(17, "Actual Shift 3")
+                .Columns.Add(18, "Cons Shift 3")
+                .Columns.Add(19, "SCH Roll Shift 3")
+                .Columns.Add(20, "Roll Shift 3")
+                .Columns.Add(21, "Meter Shift 3")
+                .Columns.Add(22, "Description Shift 3")
             End With
         Catch ex As Exception
             MsgBoxError(ex.Message)
@@ -208,7 +210,7 @@ Public Class FrmSchedule
             If dr.HasRows Then
                 txtCode.Text = dr.Item("ScheduleCode")
                 dtpDate.Value = dr.Item("ScheduleDate")
-                txtRev.Text = dr.Item("Revision")
+                If IsDBNull(dr.Item("Revision")) Then txtRev.Text = 0 Else txtRev.Text = dr.Item("Revision")
             End If
             dr.Close()
         Catch ex As Exception
@@ -363,7 +365,7 @@ Public Class FrmSchedule
         Dim countRev As Integer
         countRev = rev + 1
 
-        updateHeader = "Update Schedules Set Rev = '" & countRev & "',status = 2,Updated_by = '" & userCode & "',Updated_date = '" & Format(Now, "yyyy-MM-dd") & "'" & vbCrLf
+        updateHeader = "Update Schedules Set Revision = '" & countRev & "',status = 2,Updated_by = '" & userCode & "',Updated_date = '" & Format(Now, "yyyy-MM-dd") & "'" & vbCrLf
         updateHeader += "Where ScheduleCode = '" & txtCode.Text & "'"
         sqlList.Add(updateHeader)
 
@@ -388,7 +390,7 @@ Public Class FrmSchedule
                 Return True
             End If
         Catch ex As Exception
-            Return False
+            'Return False
             MsgBoxError(ex.Message)
         End Try
         dac = Nothing
@@ -428,6 +430,7 @@ Public Class FrmSchedule
 
 
     Private Sub FrmSchedule_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        intbaris = 0
         Select Case statView
             Case "New"
                 PreCreateDisplay()
@@ -666,20 +669,28 @@ Public Class FrmSchedule
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If CheckIsEmpty() = False Then
-            If SaveData() = True Then
-                MsgBoxSaved()
-                PreCreateDisplay()
-            End If
+            Select Case statView
+                Case "New"
+                    If SaveData() = True Then
+                        MsgBoxSaved()
+                        Close()
+                    End If
+                Case "Update"
+                    If UpdateData() = True Then
+                        MsgBoxUpdated()
+                        Close()
+                    End If
+            End Select
         End If
     End Sub
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
-        If CheckIsEmpty() = False Then
-            If SaveData() = True Then
-                MsgBoxSaved()
+        Select Case statView
+            Case "New"
                 PreCreateDisplay()
-            End If
-        End If
+            Case "Update"
+                PreUpdateDisplay()
+        End Select
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
@@ -689,12 +700,14 @@ Public Class FrmSchedule
     Private Sub btnApproved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnApproved.Click
         If ApprovedData() = True Then
             MsgBoxApproved()
+            Close()
         End If
     End Sub
 
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
         If VoidData() = True Then
             MsgBoxVoid()
+            Close()
         End If
     End Sub
 End Class

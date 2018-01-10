@@ -123,7 +123,7 @@ Partial Class FrmNumSpec
         Me.txtProc6.MaxLength = 4
         Me.txtProc6.Name = "txtProc6"
         Me.txtProc6.Size = New System.Drawing.Size(62, 20)
-        Me.txtProc6.TabIndex = 17
+        Me.txtProc6.TabIndex = 12
         '
         'Label13
         '
@@ -157,7 +157,7 @@ Partial Class FrmNumSpec
         Me.txtProc4.MaxLength = 4
         Me.txtProc4.Name = "txtProc4"
         Me.txtProc4.Size = New System.Drawing.Size(62, 20)
-        Me.txtProc4.TabIndex = 15
+        Me.txtProc4.TabIndex = 10
         '
         'Label11
         '
@@ -174,7 +174,7 @@ Partial Class FrmNumSpec
         Me.txtProc3.MaxLength = 4
         Me.txtProc3.Name = "txtProc3"
         Me.txtProc3.Size = New System.Drawing.Size(62, 20)
-        Me.txtProc3.TabIndex = 11
+        Me.txtProc3.TabIndex = 9
         '
         'Label10
         '
@@ -191,7 +191,7 @@ Partial Class FrmNumSpec
         Me.txtProc2.MaxLength = 4
         Me.txtProc2.Name = "txtProc2"
         Me.txtProc2.Size = New System.Drawing.Size(62, 20)
-        Me.txtProc2.TabIndex = 13
+        Me.txtProc2.TabIndex = 8
         '
         'Label9
         '
@@ -208,7 +208,7 @@ Partial Class FrmNumSpec
         Me.txtProc1.MaxLength = 4
         Me.txtProc1.Name = "txtProc1"
         Me.txtProc1.Size = New System.Drawing.Size(62, 20)
-        Me.txtProc1.TabIndex = 11
+        Me.txtProc1.TabIndex = 7
         '
         'Label8
         '
@@ -242,7 +242,7 @@ Partial Class FrmNumSpec
         Me.txtProd4.MaxLength = 100
         Me.txtProd4.Name = "txtProd4"
         Me.txtProd4.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd4.TabIndex = 13
+        Me.txtProd4.TabIndex = 6
         '
         'Label7
         '
@@ -259,7 +259,7 @@ Partial Class FrmNumSpec
         Me.txtProd3.MaxLength = 4
         Me.txtProd3.Name = "txtProd3"
         Me.txtProd3.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd3.TabIndex = 11
+        Me.txtProd3.TabIndex = 5
         '
         'Label6
         '
@@ -276,7 +276,7 @@ Partial Class FrmNumSpec
         Me.txtProd2.MaxLength = 4
         Me.txtProd2.Name = "txtProd2"
         Me.txtProd2.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd2.TabIndex = 11
+        Me.txtProd2.TabIndex = 4
         '
         'Label5
         '
@@ -293,7 +293,7 @@ Partial Class FrmNumSpec
         Me.txtProd1.MaxLength = 4
         Me.txtProd1.Name = "txtProd1"
         Me.txtProd1.Size = New System.Drawing.Size(62, 20)
-        Me.txtProd1.TabIndex = 9
+        Me.txtProd1.TabIndex = 3
         '
         'Label3
         '
@@ -310,7 +310,7 @@ Partial Class FrmNumSpec
         Me.txtDesc.MaxLength = 100
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(412, 20)
-        Me.txtDesc.TabIndex = 5
+        Me.txtDesc.TabIndex = 2
         '
         'Label4
         '
@@ -324,7 +324,7 @@ Partial Class FrmNumSpec
         'txtCode
         '
         Me.txtCode.Location = New System.Drawing.Point(100, 22)
-        Me.txtCode.MaxLength = 6
+        Me.txtCode.MaxLength = 8
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(242, 20)
         Me.txtCode.TabIndex = 1
@@ -360,7 +360,7 @@ Partial Class FrmNumSpec
         Me.btnExit.Location = New System.Drawing.Point(432, 8)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(79, 35)
-        Me.btnExit.TabIndex = 5
+        Me.btnExit.TabIndex = 18
         Me.btnExit.Text = "Exit"
         Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnExit.UseVisualStyleBackColor = True
@@ -372,7 +372,7 @@ Partial Class FrmNumSpec
         Me.btnCancel.Location = New System.Drawing.Point(262, 8)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(79, 35)
-        Me.btnCancel.TabIndex = 4
+        Me.btnCancel.TabIndex = 16
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -384,7 +384,7 @@ Partial Class FrmNumSpec
         Me.btnDelete.Location = New System.Drawing.Point(347, 8)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(79, 35)
-        Me.btnDelete.TabIndex = 3
+        Me.btnDelete.TabIndex = 17
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -396,7 +396,7 @@ Partial Class FrmNumSpec
         Me.btnEdit.Location = New System.Drawing.Point(180, 8)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(79, 35)
-        Me.btnEdit.TabIndex = 2
+        Me.btnEdit.TabIndex = 15
         Me.btnEdit.Text = "Update"
         Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -408,7 +408,7 @@ Partial Class FrmNumSpec
         Me.btnSave.Location = New System.Drawing.Point(95, 8)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(79, 35)
-        Me.btnSave.TabIndex = 1
+        Me.btnSave.TabIndex = 14
         Me.btnSave.Text = "Save"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSave.UseVisualStyleBackColor = True
@@ -420,7 +420,7 @@ Partial Class FrmNumSpec
         Me.btnAdd.Location = New System.Drawing.Point(10, 8)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(79, 35)
-        Me.btnAdd.TabIndex = 0
+        Me.btnAdd.TabIndex = 13
         Me.btnAdd.Text = "Add"
         Me.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -441,7 +441,7 @@ Partial Class FrmNumSpec
         Me.txtCari.Location = New System.Drawing.Point(12, 30)
         Me.txtCari.Name = "txtCari"
         Me.txtCari.Size = New System.Drawing.Size(665, 20)
-        Me.txtCari.TabIndex = 8
+        Me.txtCari.TabIndex = 19
         '
         'dgv
         '
@@ -450,7 +450,7 @@ Partial Class FrmNumSpec
         Me.dgv.Location = New System.Drawing.Point(0, 338)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(685, 417)
-        Me.dgv.TabIndex = 9
+        Me.dgv.TabIndex = 20
         '
         'FrmNumSpec
         '

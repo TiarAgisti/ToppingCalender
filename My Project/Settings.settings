@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="serverName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="databaseName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">toppingcalender</Value>
     </Setting>
     <Setting Name="userID" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">root</Value>
     </Setting>
     <Setting Name="passwordUser" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

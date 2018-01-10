@@ -90,7 +90,7 @@ Partial Class FrmTreatment
         'txtCode
         '
         Me.txtCode.Location = New System.Drawing.Point(100, 22)
-        Me.txtCode.MaxLength = 6
+        Me.txtCode.MaxLength = 10
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(242, 20)
         Me.txtCode.TabIndex = 1

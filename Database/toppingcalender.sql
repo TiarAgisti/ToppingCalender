@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2017 at 04:46 AM
+-- Generation Time: Jan 08, 2018 at 12:24 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -140,7 +140,9 @@ CREATE TABLE IF NOT EXISTS `productiondetails` (
   `Sign` varchar(2) DEFAULT NULL,
   `Actual` decimal(10,0) DEFAULT NULL,
   `QtyMeter` decimal(10,0) NOT NULL,
-  `Information` varchar(100) DEFAULT NULL
+  `Information` varchar(100) DEFAULT NULL,
+  `Month` int(20) NOT NULL,
+  `Year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -154,7 +156,6 @@ CREATE TABLE IF NOT EXISTS `productions` (
   `ProductionDate` date NOT NULL,
   `ExpDate` date NOT NULL,
   `ScheduleCode` varchar(15) NOT NULL,
-  `Shift` int(11) NOT NULL,
   `Status` int(11) NOT NULL,
   `Created_by` varchar(6) NOT NULL,
   `Created_Date` date NOT NULL,
@@ -176,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `scheduledetails` (
   `MachineCode` varchar(6) NOT NULL,
   `ExpectedSpeed` int(11) NOT NULL,
   `ActualSpeedshift1` decimal(10,0) DEFAULT NULL,
-  `ConsShift1` decimal(10,0) NOT NULL,
+  `ConsShift1` decimal(10,0) DEFAULT NULL,
   `SCHRollShift1` decimal(10,0) DEFAULT NULL,
   `rollshift1` decimal(10,0) DEFAULT NULL,
   `metershift1` decimal(10,0) DEFAULT NULL,
@@ -188,12 +189,21 @@ CREATE TABLE IF NOT EXISTS `scheduledetails` (
   `metershift2` decimal(10,0) DEFAULT NULL,
   `descshift2` varchar(100) DEFAULT NULL,
   `ActualSpeedshift3` decimal(10,0) DEFAULT NULL,
-  `ConsShift3` decimal(10,0) NOT NULL,
+  `ConsShift3` decimal(10,0) DEFAULT NULL,
   `SCHRollShift3` decimal(10,0) DEFAULT NULL,
   `rollshift3` decimal(10,0) DEFAULT NULL,
   `metershift3` decimal(10,0) DEFAULT NULL,
   `descshift3` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `scheduledetails`
+--
+
+INSERT INTO `scheduledetails` (`ScheduleCode`, `TreatmentCode`, `ConsDay`, `ConsShift`, `MachineCode`, `ExpectedSpeed`, `ActualSpeedshift1`, `ConsShift1`, `SCHRollShift1`, `rollshift1`, `metershift1`, `descshift1`, `ActualSpeedshift2`, `ConsShift2`, `SCHRollShift2`, `rollshift2`, `metershift2`, `descshift2`, `ActualSpeedshift3`, `ConsShift3`, `SCHRollShift3`, `rollshift3`, `metershift3`, `descshift3`) VALUES
+('SCH/2018/000000', 'tr899', '1', '1', 'mc0001', 1, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
+('SCH/2018/000001', 'tr899', '1', '1', 'mc0001', 1, '1', '1', '1', '1', '1', '1', '11', '1', '1', '1', '1', 'test', '1', '1', '1', '1', '1', 'test'),
+('SCH/2018/000002', 'tr899', '1', '1', 'mc0001', 1, '11', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'test');
 
 -- --------------------------------------------------------
 
@@ -203,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `scheduledetails` (
 
 CREATE TABLE IF NOT EXISTS `schedules` (
   `ScheduleCode` varchar(15) NOT NULL,
-  `SheduleDate` date NOT NULL,
+  `ScheduleDate` date NOT NULL,
   `Revision` int(11) NOT NULL,
   `Status` int(11) NOT NULL,
   `Created_by` varchar(6) NOT NULL,
@@ -211,6 +221,14 @@ CREATE TABLE IF NOT EXISTS `schedules` (
   `Updated_by` varchar(6) NOT NULL,
   `Updated_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `schedules`
+--
+
+INSERT INTO `schedules` (`ScheduleCode`, `ScheduleDate`, `Revision`, `Status`, `Created_by`, `Created_Date`, `Updated_by`, `Updated_Date`) VALUES
+('SCH/2018/000001', '2018-01-08', 1, 3, '2018-0', '0000-00-00', '', '2018-01-08'),
+('SCH/2018/000002', '2018-01-08', 0, 3, '2018-0', '0000-00-00', '', '2018-01-08');
 
 -- --------------------------------------------------------
 
@@ -304,11 +322,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`UserCode`, `UserName`, `UserPassword`, `AccessLevel`, `IsActive`, `Created_by`, `Created_Date`, `Updated_by`, `Updated_Date`) VALUES
-('USR001', 'test', 'O/e+aAh8xmw=', 'Admin', 1, 'System', '2017-12-07', 'System', '2017-12-07'),
-('USR002', 'test', 'u9g2WZEC0y0=', 'Leader', 0, 'System', '2017-12-07', 'test', '2017-12-07'),
-('USR003', 'tiar', 'O/e+aAh8xmw=', 'Leader', 1, 'System', '2017-12-10', 'USR003', '2017-12-10'),
-('USR004', 'apip', 'EpqDw4oz7S8=', 'Admin', 1, 'System', '2017-12-10', 'System', '2017-12-10'),
-('USR005', 'alan', 'gGfYdFNiK1A=', 'Production', 1, 'System', '2017-12-10', 'System', '2017-12-10');
+('USR001', 'agus', 'tOub3jRLlUo=', 'Admin', 1, 'System', '2018-01-08', 'System', '2018-01-08');
 
 --
 -- Indexes for dumped tables

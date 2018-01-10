@@ -48,7 +48,7 @@ Partial Class FrmListScrap
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(954, 39)
+        Me.Label1.Size = New System.Drawing.Size(782, 39)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "List Scrap Production"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -64,7 +64,7 @@ Partial Class FrmListScrap
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(954, 137)
+        Me.GroupBox1.Size = New System.Drawing.Size(782, 137)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search"
@@ -138,7 +138,7 @@ Partial Class FrmListScrap
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 176)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(954, 47)
+        Me.Panel1.Size = New System.Drawing.Size(782, 47)
         Me.Panel1.TabIndex = 9
         '
         'btnExit
@@ -183,7 +183,7 @@ Partial Class FrmListScrap
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv.Location = New System.Drawing.Point(0, 223)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(954, 494)
+        Me.dgv.Size = New System.Drawing.Size(782, 254)
         Me.dgv.TabIndex = 10
         '
         'FrmListScrap
@@ -191,7 +191,7 @@ Partial Class FrmListScrap
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(954, 717)
+        Me.ClientSize = New System.Drawing.Size(782, 477)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
@@ -200,6 +200,7 @@ Partial Class FrmListScrap
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmListScrap"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmListScrap"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

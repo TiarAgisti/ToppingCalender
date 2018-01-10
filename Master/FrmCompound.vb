@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmCompound
-    Dim queryList As String = "Select compountcode,compountbatch,compountdesc,compountexpdate from compounts where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -44,6 +44,7 @@ Public Class FrmCompound
     End Sub
     Sub RetrieveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select compountcode,compountbatch,compountdesc,compountexpdate from compounts where isactive = 1"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -55,6 +56,7 @@ Public Class FrmCompound
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select compountcode,compountbatch,compountdesc,compountexpdate from compounts where isactive = 1"
         If cmbCari.Text = "Compound Code" Then
             queryList += " And compountcode LIKE '%" & txtCari.Text & "%'"
         ElseIf cmbCari.Text = "Batch" Then

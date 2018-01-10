@@ -82,15 +82,15 @@
     End Sub
 
     Private Sub menuUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuUser.Click
-        FrmUser.Show()
+        FrmUser.ShowDialog()
     End Sub
 
     Private Sub menuTreatment_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuTreatment.Click
-        FrmTreatment.Show()
+        FrmTreatment.ShowDialog()
     End Sub
 
     Private Sub menuNylon_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuNylon.Click
-        FrmNylon.Show()
+        FrmNylon.ShowDialog()
     End Sub
 
     Private Sub menuTrans_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuTrans.Click
@@ -112,10 +112,8 @@
     End Sub
 
     Private Sub menuCompound_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuCompound.Click
-        FrmCompound.Show()
+        FrmCompound.ShowDialog()
     End Sub
-
-   
 
     Private Sub menuSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuSetting.Click
         If boolMenuSetting = False Then
@@ -127,7 +125,7 @@
     End Sub
 
     Private Sub menuChangePass_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuChangePass.Click
-        FrmChangePassword.Show()
+        FrmChangePassword.ShowDialog()
     End Sub
 
     Private Sub menuExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuExit.Click
@@ -135,5 +133,25 @@
         If result = MsgBoxResult.Yes Then
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub menuSchedule_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuSchedule.Click
+        FrmListSchedule.ShowDialog()
+    End Sub
+
+    Private Sub menuProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuProd.Click
+        FrmListProduction.ShowDialog()
+    End Sub
+
+    Private Sub menuScrap_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuScrap.Click
+        FrmListScrap.ShowDialog()
+    End Sub
+
+    Private Sub menuNumSpec_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuNumSpec.Click
+        FrmNumSpec.ShowDialog()
+    End Sub
+
+    Private Sub menuMachine_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuMachine.Click
+        FrmMachine.ShowDialog()
     End Sub
 End Class

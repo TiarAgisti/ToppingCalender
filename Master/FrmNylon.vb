@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmNylon
-    Dim queryList As String = "Select nyloncode,norollnylon,description from nylon where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -41,6 +41,7 @@ Public Class FrmNylon
         dgv.Columns(2).HeaderText = "Description"
     End Sub
     Sub RetrieveList()
+        queryList = "Select nyloncode,norollnylon,description from nylon where isactive = 1"
         Dim dac As DataAccess = New DataAccess
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
@@ -53,6 +54,7 @@ Public Class FrmNylon
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select nyloncode,norollnylon,description from nylon where isactive = 1"
         If cmbCari.Text = "Nylon Code" Then
             queryList += " And nyloncode LIKE '%" & txtCari.Text & "%'"
         ElseIf cmbCari.Text = "No Roll" Then

@@ -1,8 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmNumSpec
-    Dim queryList As String = "select numberspec,description,product1,produdt2,product3,product4,process1,process2" & _
-                                ",process3,process4,process5,process6 from numbersspec where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -69,6 +68,8 @@ Public Class FrmNumSpec
     End Sub
     Sub RetrieveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "select numberspec,description,product1,product2,product3,product4,process1,process2" & vbCrLf
+        queryList += ",process3,process4,process5,process6 from numbersspec where isactive = 1"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -80,7 +81,9 @@ Public Class FrmNumSpec
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
-        queryList += " AND NumberSpec LIKE '%" & txtCari.Text & "%'"
+        queryList = "select numberspec,description,product1,produdt2,product3,product4,process1,process2" & vbCrLf
+        queryList += ",process3,process4,process5,process6 from numbersspec where isactive = 1" & vbCrLf
+        queryList += "AND NumberSpec LIKE '%" & txtCari.Text & "%'"
 
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
@@ -177,7 +180,7 @@ Public Class FrmNumSpec
         Dim queryInsert As String
 
         queryInsert = "Insert into numbersspec values('" & txtCode.Text & "','" & txtDesc.Text & "','" & txtProd1.Text & "'" & vbCrLf
-        queryInsert += ",'" & txtProd2.Text & "','" & txtProd3.Text & "','" & txtProd4.Text & "',,'" & txtProc1.Text & "'" & vbCrLf
+        queryInsert += ",'" & txtProd2.Text & "','" & txtProd3.Text & "','" & txtProd4.Text & "','" & txtProc1.Text & "'" & vbCrLf
         queryInsert += ",'" & txtProc2.Text & "','" & txtProc3.Text & "','" & txtProc4.Text & "','" & txtProc5.Text & "','" & txtProc6.Text & "'" & vbCrLf
         queryInsert += ",1,'" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "','" & userCode & "'" & vbCrLf
         queryInsert += ",'" & Format(Now, "yyyy-MM-dd") & "')"

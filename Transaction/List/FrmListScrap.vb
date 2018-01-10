@@ -1,11 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class FrmListScrap
-    Dim queryList As String = "Select ScrapCode,ScrapDate,MachineCode,Shift,ProductionCode,Case When Status = 1 Then 'New'" & _
-                               "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & _
-                               "From ScrapProductions"
-
-
+    Dim queryList As String
     Sub HeaderGrid()
         dgv.Columns(0).HeaderText = "Scrap Code"
         dgv.Columns(1).HeaderText = "Date"
@@ -15,9 +11,11 @@ Public Class FrmListScrap
         dgv.Columns(4).HeaderText = "Production Code"
         dgv.Columns(5).HeaderText = "Status"
     End Sub
-
     Sub RetriveList()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select ScrapCode,ScrapDate,MachineCode,Shift,ProductionCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
+        queryList += "From ScrapProductions"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -28,18 +26,22 @@ Public Class FrmListScrap
     End Sub
 
     Sub RetrieveListSearch()
+        queryList = "Select ScrapCode,ScrapDate,MachineCode,Shift,ProductionCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
+        queryList += "From ScrapProductions" & vbCrLf
+
         If rdCode.Checked = True Then
             If Trim(txtCode.Text) = "" Then
                 MsgBoxWarning("Please fill Production Code")
                 Exit Sub
             Else
-                queryList += " And ScrapCode = '" & txtCode.Text & "'"
+                queryList += "Where ScrapCode = '" & txtCode.Text & "'"
             End If
 
         End If
 
         If rdDate.Checked = True Then
-            queryList += " And ScrapDate = '" & Format(dtpDate.Value, "yyyy-MM-dd") & "'"
+            queryList += "Where ScrapDate = '" & Format(dtpDate.Value, "yyyy-MM-dd") & "'"
         End If
 
         Dim dac As DataAccess = New DataAccess

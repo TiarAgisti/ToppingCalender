@@ -120,7 +120,7 @@ Partial Class FrmProduction
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(999, 39)
+        Me.Label1.Size = New System.Drawing.Size(999, 36)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Production"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -137,14 +137,14 @@ Partial Class FrmProduction
         Me.Panel1.Controls.Add(Me.txtCode)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 39)
+        Me.Panel1.Location = New System.Drawing.Point(0, 36)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(999, 86)
+        Me.Panel1.Size = New System.Drawing.Size(999, 69)
         Me.Panel1.TabIndex = 6
         '
         'dtpExpDateProd
         '
-        Me.dtpExpDateProd.Location = New System.Drawing.Point(433, 55)
+        Me.dtpExpDateProd.Location = New System.Drawing.Point(433, 38)
         Me.dtpExpDateProd.Name = "dtpExpDateProd"
         Me.dtpExpDateProd.Size = New System.Drawing.Size(197, 20)
         Me.dtpExpDateProd.TabIndex = 11
@@ -152,7 +152,7 @@ Partial Class FrmProduction
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(364, 58)
+        Me.Label29.Location = New System.Drawing.Point(364, 41)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(51, 13)
         Me.Label29.TabIndex = 10
@@ -161,7 +161,7 @@ Partial Class FrmProduction
         'cmbSchedule
         '
         Me.cmbSchedule.FormattingEnabled = True
-        Me.cmbSchedule.Location = New System.Drawing.Point(97, 55)
+        Me.cmbSchedule.Location = New System.Drawing.Point(97, 38)
         Me.cmbSchedule.Name = "cmbSchedule"
         Me.cmbSchedule.Size = New System.Drawing.Size(234, 21)
         Me.cmbSchedule.TabIndex = 7
@@ -169,7 +169,7 @@ Partial Class FrmProduction
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 58)
+        Me.Label4.Location = New System.Drawing.Point(11, 41)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 13)
         Me.Label4.TabIndex = 9
@@ -177,7 +177,7 @@ Partial Class FrmProduction
         '
         'dtpDate
         '
-        Me.dtpDate.Location = New System.Drawing.Point(433, 20)
+        Me.dtpDate.Location = New System.Drawing.Point(433, 3)
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(197, 20)
         Me.dtpDate.TabIndex = 8
@@ -185,7 +185,7 @@ Partial Class FrmProduction
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(364, 23)
+        Me.Label3.Location = New System.Drawing.Point(364, 6)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 13)
         Me.Label3.TabIndex = 6
@@ -194,7 +194,7 @@ Partial Class FrmProduction
         'txtCode
         '
         Me.txtCode.Enabled = False
-        Me.txtCode.Location = New System.Drawing.Point(97, 20)
+        Me.txtCode.Location = New System.Drawing.Point(97, 3)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(234, 20)
         Me.txtCode.TabIndex = 7
@@ -202,7 +202,7 @@ Partial Class FrmProduction
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 23)
+        Me.Label2.Location = New System.Drawing.Point(11, 6)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 13)
         Me.Label2.TabIndex = 6
@@ -218,7 +218,7 @@ Partial Class FrmProduction
         Me.Panel2.Controls.Add(Me.txtNoRoll)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 125)
+        Me.Panel2.Location = New System.Drawing.Point(0, 105)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(999, 49)
         Me.Panel2.TabIndex = 7
@@ -280,7 +280,7 @@ Partial Class FrmProduction
         Me.Panel3.Controls.Add(Me.GroupBox2)
         Me.Panel3.Controls.Add(Me.GroupBox1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 174)
+        Me.Panel3.Location = New System.Drawing.Point(0, 154)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(999, 98)
         Me.Panel3.TabIndex = 8
@@ -517,15 +517,15 @@ Partial Class FrmProduction
         Me.Panel4.Controls.Add(Me.txtSupp)
         Me.Panel4.Controls.Add(Me.Label18)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 272)
+        Me.Panel4.Location = New System.Drawing.Point(0, 252)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(999, 80)
+        Me.Panel4.Size = New System.Drawing.Size(999, 66)
         Me.Panel4.TabIndex = 9
         '
         'txtRollNylon
         '
         Me.txtRollNylon.Enabled = False
-        Me.txtRollNylon.Location = New System.Drawing.Point(421, 51)
+        Me.txtRollNylon.Location = New System.Drawing.Point(421, 35)
         Me.txtRollNylon.Name = "txtRollNylon"
         Me.txtRollNylon.Size = New System.Drawing.Size(136, 20)
         Me.txtRollNylon.TabIndex = 15
@@ -533,7 +533,7 @@ Partial Class FrmProduction
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(343, 53)
+        Me.Label21.Location = New System.Drawing.Point(343, 37)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(72, 13)
         Me.Label21.TabIndex = 14
@@ -542,7 +542,7 @@ Partial Class FrmProduction
         'cmbNylon
         '
         Me.cmbNylon.FormattingEnabled = True
-        Me.cmbNylon.Location = New System.Drawing.Point(421, 24)
+        Me.cmbNylon.Location = New System.Drawing.Point(421, 8)
         Me.cmbNylon.Name = "cmbNylon"
         Me.cmbNylon.Size = New System.Drawing.Size(268, 21)
         Me.cmbNylon.TabIndex = 14
@@ -550,7 +550,7 @@ Partial Class FrmProduction
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(343, 27)
+        Me.Label20.Location = New System.Drawing.Point(343, 11)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(34, 13)
         Me.Label20.TabIndex = 15
@@ -558,7 +558,7 @@ Partial Class FrmProduction
         '
         'dtpInNylon
         '
-        Me.dtpInNylon.Location = New System.Drawing.Point(89, 47)
+        Me.dtpInNylon.Location = New System.Drawing.Point(89, 31)
         Me.dtpInNylon.Name = "dtpInNylon"
         Me.dtpInNylon.Size = New System.Drawing.Size(190, 20)
         Me.dtpInNylon.TabIndex = 11
@@ -566,7 +566,7 @@ Partial Class FrmProduction
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(11, 47)
+        Me.Label19.Location = New System.Drawing.Point(11, 31)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(72, 13)
         Me.Label19.TabIndex = 10
@@ -575,7 +575,7 @@ Partial Class FrmProduction
         'txtSupp
         '
         Me.txtSupp.Enabled = False
-        Me.txtSupp.Location = New System.Drawing.Point(90, 21)
+        Me.txtSupp.Location = New System.Drawing.Point(90, 5)
         Me.txtSupp.Name = "txtSupp"
         Me.txtSupp.Size = New System.Drawing.Size(136, 20)
         Me.txtSupp.TabIndex = 15
@@ -583,7 +583,7 @@ Partial Class FrmProduction
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(11, 24)
+        Me.Label18.Location = New System.Drawing.Point(11, 8)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(45, 13)
         Me.Label18.TabIndex = 14
@@ -600,9 +600,9 @@ Partial Class FrmProduction
         Me.GroupBox3.Controls.Add(Me.cmbCompound)
         Me.GroupBox3.Controls.Add(Me.Label22)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 352)
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 318)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(999, 93)
+        Me.GroupBox3.Size = New System.Drawing.Size(999, 77)
         Me.GroupBox3.TabIndex = 10
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "COMPOUND"
@@ -610,7 +610,7 @@ Partial Class FrmProduction
         'dtpExpDate
         '
         Me.dtpExpDate.Enabled = False
-        Me.dtpExpDate.Location = New System.Drawing.Point(443, 52)
+        Me.dtpExpDate.Location = New System.Drawing.Point(443, 44)
         Me.dtpExpDate.Name = "dtpExpDate"
         Me.dtpExpDate.Size = New System.Drawing.Size(242, 20)
         Me.dtpExpDate.TabIndex = 14
@@ -618,7 +618,7 @@ Partial Class FrmProduction
         'txtBatch
         '
         Me.txtBatch.Enabled = False
-        Me.txtBatch.Location = New System.Drawing.Point(90, 56)
+        Me.txtBatch.Location = New System.Drawing.Point(90, 48)
         Me.txtBatch.MaxLength = 25
         Me.txtBatch.Name = "txtBatch"
         Me.txtBatch.Size = New System.Drawing.Size(242, 20)
@@ -627,7 +627,7 @@ Partial Class FrmProduction
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(354, 58)
+        Me.Label24.Location = New System.Drawing.Point(354, 50)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(68, 13)
         Me.Label24.TabIndex = 13
@@ -636,7 +636,7 @@ Partial Class FrmProduction
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(12, 59)
+        Me.Label23.Location = New System.Drawing.Point(12, 51)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(35, 13)
         Me.Label23.TabIndex = 18
@@ -645,7 +645,7 @@ Partial Class FrmProduction
         'txtDesc
         '
         Me.txtDesc.Enabled = False
-        Me.txtDesc.Location = New System.Drawing.Point(443, 25)
+        Me.txtDesc.Location = New System.Drawing.Point(443, 17)
         Me.txtDesc.MaxLength = 100
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(412, 20)
@@ -654,7 +654,7 @@ Partial Class FrmProduction
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(354, 28)
+        Me.Label25.Location = New System.Drawing.Point(354, 20)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(89, 13)
         Me.Label25.TabIndex = 11
@@ -663,7 +663,7 @@ Partial Class FrmProduction
         'cmbCompound
         '
         Me.cmbCompound.FormattingEnabled = True
-        Me.cmbCompound.Location = New System.Drawing.Point(90, 29)
+        Me.cmbCompound.Location = New System.Drawing.Point(90, 21)
         Me.cmbCompound.Name = "cmbCompound"
         Me.cmbCompound.Size = New System.Drawing.Size(242, 21)
         Me.cmbCompound.TabIndex = 16
@@ -671,7 +671,7 @@ Partial Class FrmProduction
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(12, 32)
+        Me.Label22.Location = New System.Drawing.Point(12, 24)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(58, 13)
         Me.Label22.TabIndex = 17
@@ -687,7 +687,7 @@ Partial Class FrmProduction
         Me.Panel5.Controls.Add(Me.txtQtyAct)
         Me.Panel5.Controls.Add(Me.Label26)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 445)
+        Me.Panel5.Location = New System.Drawing.Point(0, 395)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(999, 38)
         Me.Panel5.TabIndex = 11
@@ -749,9 +749,9 @@ Partial Class FrmProduction
         Me.Panel6.Controls.Add(Me.btnDelete)
         Me.Panel6.Controls.Add(Me.btnAdd)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 483)
+        Me.Panel6.Location = New System.Drawing.Point(0, 433)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(999, 52)
+        Me.Panel6.Size = New System.Drawing.Size(999, 46)
         Me.Panel6.TabIndex = 12
         '
         'btnDelete
@@ -776,9 +776,9 @@ Partial Class FrmProduction
         '
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Top
-        Me.dgv.Location = New System.Drawing.Point(0, 535)
+        Me.dgv.Location = New System.Drawing.Point(0, 479)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(999, 229)
+        Me.dgv.Size = New System.Drawing.Size(999, 159)
         Me.dgv.TabIndex = 13
         '
         'Panel7
@@ -792,14 +792,14 @@ Partial Class FrmProduction
         Me.Panel7.Controls.Add(Me.btnSave)
         Me.Panel7.Controls.Add(Me.btnCancel)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(0, 764)
+        Me.Panel7.Location = New System.Drawing.Point(0, 638)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(999, 48)
+        Me.Panel7.Size = New System.Drawing.Size(999, 60)
         Me.Panel7.TabIndex = 14
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(643, 15)
+        Me.btnPrint.Location = New System.Drawing.Point(643, 5)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(106, 29)
         Me.btnPrint.TabIndex = 6
@@ -808,7 +808,7 @@ Partial Class FrmProduction
         '
         'btnSign
         '
-        Me.btnSign.Location = New System.Drawing.Point(755, 15)
+        Me.btnSign.Location = New System.Drawing.Point(755, 5)
         Me.btnSign.Name = "btnSign"
         Me.btnSign.Size = New System.Drawing.Size(75, 29)
         Me.btnSign.TabIndex = 5
@@ -817,7 +817,7 @@ Partial Class FrmProduction
         '
         'btnApproved
         '
-        Me.btnApproved.Location = New System.Drawing.Point(836, 15)
+        Me.btnApproved.Location = New System.Drawing.Point(836, 5)
         Me.btnApproved.Name = "btnApproved"
         Me.btnApproved.Size = New System.Drawing.Size(75, 29)
         Me.btnApproved.TabIndex = 4
@@ -826,7 +826,7 @@ Partial Class FrmProduction
         '
         'btnVoid
         '
-        Me.btnVoid.Location = New System.Drawing.Point(917, 15)
+        Me.btnVoid.Location = New System.Drawing.Point(917, 5)
         Me.btnVoid.Name = "btnVoid"
         Me.btnVoid.Size = New System.Drawing.Size(75, 29)
         Me.btnVoid.TabIndex = 3
@@ -837,9 +837,9 @@ Partial Class FrmProduction
         '
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(178, 15)
+        Me.btnExit.Location = New System.Drawing.Point(178, 5)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 29)
+        Me.btnExit.Size = New System.Drawing.Size(75, 42)
         Me.btnExit.TabIndex = 2
         Me.btnExit.Text = "Exit"
         Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -849,9 +849,9 @@ Partial Class FrmProduction
         '
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(18, 15)
+        Me.btnSave.Location = New System.Drawing.Point(18, 5)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 29)
+        Me.btnSave.Size = New System.Drawing.Size(75, 42)
         Me.btnSave.TabIndex = 1
         Me.btnSave.Text = "Save"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -861,9 +861,9 @@ Partial Class FrmProduction
         '
         Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(97, 15)
+        Me.btnCancel.Location = New System.Drawing.Point(97, 5)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 29)
+        Me.btnCancel.Size = New System.Drawing.Size(75, 42)
         Me.btnCancel.TabIndex = 0
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -874,7 +874,7 @@ Partial Class FrmProduction
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(999, 812)
+        Me.ClientSize = New System.Drawing.Size(999, 698)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.Panel6)

@@ -13,20 +13,20 @@ Public Class FrmProduction
         Dim intCount As Long
         Dim intSearch As Long
         Try
-
             dr = dac.ExecuteReader(query)
             dr.Read()
             If Not dr.HasRows Then
-                strCode = "PRD/" & DateTime.Now.Year & "/" & "0000001"
+                strCode = "PRD/" & DateTime.Now.Year & "/" & "000001"
             Else
                 intSearch = Microsoft.VisualBasic.Right(dr.GetString(0), 6)
-                If Microsoft.VisualBasic.Left(dr.GetString(0), 8) <> "PRD/" & DateTime.Now.Year & "/" Then
+                If Microsoft.VisualBasic.Left(dr.GetString(0), 9) <> "PRD/" & DateTime.Now.Year & "/" Then
                     strCode = "PRD/" & DateTime.Now.Year & "/" & "0000001"
                 Else
                     intCount = Microsoft.VisualBasic.Right(dr.GetString(0), 6) + 1
                     strCode = "PRD/" & DateTime.Now.Year & "/" & Microsoft.VisualBasic.Right("000000" & intCount, 6)
                 End If
             End If
+            txtCode.Text = strCode
             dr.Close()
         Catch ex As Exception
             MsgBoxError(ex.Message)
@@ -48,7 +48,8 @@ Public Class FrmProduction
     End Sub
 
     Sub PopulateTreatmentCodeBySchedule()
-        Dim query As String = "Select TreatmentCode From Schedules where status = 3 and ScheduleCode = '" & cmbSchedule.Text & "'"
+        Dim query As String = "Select TreatmentCode From ScheduleDetails as schdet" & vbCrLf
+        query += "inner join Schedules as sch ON sch.ScheduleCode = schdet.ScheduleCode where sch.status = 3 and schdet.ScheduleCode = '" & cmbSchedule.Text & "'"
         Dim displayData As String = "TreatmentCode"
         Dim valueData As String = "TreatmentCode"
         Dim dac As DataAccess = New DataAccess
@@ -503,27 +504,39 @@ Public Class FrmProduction
     End Sub
 
     Sub PrepareButton(ByVal statBool As Boolean)
-
+        btnSave.Enabled = statBool
+        btnCancel.Enabled = statBool
+        btnPrint.Enabled = statBool
+        btnSign.Enabled = statBool
+        btnApproved.Enabled = statBool
+        btnVoid.Enabled = statBool
     End Sub
 
     Sub PreCreateDisplay()
-
+        ClearHeader()
+        ClearDetails()
+        ClearCompound()
+        ClearProcess()
+        ClearProduct()
+        GeneratedCode()
+        PopulateCompound()
+        PopulateNumberSpec()
+        PopulateNylon()
+        PopulateScheduleCode()
     End Sub
 
     Sub PreUpdateDisplay()
-
+        RetrieveHeader()
+        RetrieveDetails()
     End Sub
 
     Private Sub FrmProduction_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-    End Sub
-
-
-    Private Sub cmbSchedule_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbSchedule.KeyPress
-        If e.KeyChar = Chr(13) Then
-            PopulateTreatmentCodeBySchedule()
-            cmbTreatment.Focus()
-        End If
+        Select Case statView
+            Case "New"
+                PreCreateDisplay()
+            Case "Update"
+                PreUpdateDisplay()
+        End Select
     End Sub
 
     Private Sub cmbTreatment_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbTreatment.KeyPress
@@ -637,5 +650,15 @@ Public Class FrmProduction
         If VoidData() = True Then
             MsgBoxVoid()
         End If
+    End Sub
+
+    Private Sub cmbSchedule_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbSchedule.KeyPress
+        If e.KeyChar = Chr(13) Then
+            cmbTreatment.Focus()
+        End If
+    End Sub
+
+    Private Sub cmbSchedule_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbSchedule.SelectedIndexChanged
+        PopulateTreatmentCodeBySchedule()
     End Sub
 End Class

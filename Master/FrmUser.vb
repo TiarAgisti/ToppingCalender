@@ -1,5 +1,5 @@
 ﻿Public Class FrmUser
-    Dim queryList As String = "Select usercode,username,userpassword,accesslevel from users where isactive = 1"
+    Dim queryList As String
     Sub PrepareButtonAdd()
         btnAdd.Enabled = True
         btnSave.Enabled = False
@@ -42,6 +42,7 @@
     End Sub
     Sub RetrieveListUsers()
         Dim dac As DataAccess = New DataAccess
+        queryList = "Select usercode,username,userpassword,accesslevel from users where isactive = 1"
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
@@ -53,7 +54,7 @@
     End Sub
     Sub RetrieveListSearch()
         Dim dac As DataAccess = New DataAccess
-
+        queryList = "Select usercode,username,userpassword,accesslevel from users where isactive = 1"
         If cmbCari.Text = "User Name" Then
             queryList += " And username LIKE '%" & txtCari.Text & "%'"
         ElseIf cmbCari.Text = "Access Level" Then
