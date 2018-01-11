@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class FrmProduction
     Public Shared statView As String
     Public Shared strCode As String
+    Dim noRoll As Integer
     Dim intbaris As Integer
 
     Sub GeneratedCode()
@@ -33,7 +34,6 @@ Public Class FrmProduction
         End Try
         dac = Nothing
     End Sub
-
     Sub PopulateScheduleCode()
         Dim query As String = "Select ScheduleCode From Schedules where status = 3"
         Dim displayData As String = "ScheduleCode"
@@ -101,8 +101,9 @@ Public Class FrmProduction
     End Sub
 
     Sub GetNumberSpec()
-        Dim query As String = "Select product1,product2,product3,product4,process1,process2,process3,process4,process5,process6" & vbCrLf
-        query += "From NumbersSpec Where NumberSpec = '" & cmbNumSpec.Text & "'"
+        Dim query As String
+        query = "Select product1,product2,product3,product4,process1,process2,process3,process4,process5,process6 " & vbCrLf
+        query += "From NumbersSpec Where NumberSpec = '" & cmbNumSpec.SelectedValue & "'"
         Dim dac As DataAccess = New DataAccess
         Dim dr As MySqlDataReader
         Try
@@ -176,6 +177,7 @@ Public Class FrmProduction
     End Sub
 
     Sub GridDetails()
+        dgv.Columns.Clear()
         Try
             With dgv
                 .Columns.Add(0, "No Roll")
@@ -216,11 +218,12 @@ Public Class FrmProduction
             dr = dac.ExecuteReader(query)
             dr.Read()
             If dr.HasRows Then
-                txtNoRoll.Text = dr.Item("NoRoll") + 1
+                noRoll = dr.Item("NoRoll") + 1
             Else
-                txtNoRoll.Text = 1
+                noRoll = 1
             End If
             dr.Close()
+            txtNoRoll.Text = noRoll
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -364,7 +367,7 @@ Public Class FrmProduction
         For detail = 0 To Me.dgv.Rows.Count - 2
             insertDetail = "insert into productiondetails values('" & txtCode.Text & "','" & Me.dgv.Rows(detail).Cells(0).Value & "','" & Me.dgv.Rows(detail).Cells(1).Value & "'" & vbCrLf
             insertDetail += ",'" & Me.dgv.Rows(detail).Cells(2).Value & "','" & Me.dgv.Rows(detail).Cells(13).Value & "','" & Me.dgv.Rows(detail).Cells(15).Value & "'" & vbCrLf
-            insertDetail += ",'" & Me.dgv.Rows(detail).Cells(14).Value & "','" & Me.dgv.Rows(detail).Cells(17).Value & "','1','" & Me.dgv.Rows(detail).Cells(21).Value & "'" & vbCrLf
+            insertDetail += ",'" & Format(Me.dgv.Rows(detail).Cells(14).Value, "yyyy-MM-dd") & "','" & Me.dgv.Rows(detail).Cells(17).Value & "','1','" & Me.dgv.Rows(detail).Cells(21).Value & "'" & vbCrLf
             insertDetail += ",'" & Me.dgv.Rows(detail).Cells(22).Value & "','" & Me.dgv.Rows(detail).Cells(23).Value & "','" & Now.Month & "','" & Now.Year & "')"
             sqlList.Add(insertDetail)
         Next
@@ -404,6 +407,7 @@ Public Class FrmProduction
         Dim dac As DataAccess = New DataAccess
 
         insertHeader = "Update Productions set status = 3,Updated_by = '" & userCode & "',Updated_date = '" & Format(Now, "yyyy-MM-dd") & "' Where ProductionCode = '" & txtCode.Text & "'"
+
         Try
             If dac.InsertMasterData(insertHeader) = True Then
                 Return True
@@ -416,12 +420,16 @@ Public Class FrmProduction
     End Function
 
     Function VoidData() As Boolean
-        Dim insertHeader As String
+        Dim insertHeader, updateSchedule As String
+        Dim sqlList As List(Of String) = New List(Of String)
         Dim dac As DataAccess = New DataAccess
 
         insertHeader = "Update Productions set status = 0,Updated_by = '" & userCode & "',Updated_date = '" & Format(Now, "yyyy-MM-dd") & "' Where ProductionCode = '" & txtCode.Text & "'"
+        sqlList.Add(insertHeader)
+        updateSchedule = "Update Schedules Set Status = 3 Where ScheduleCode = '" & cmbSchedule.Text & "'"
+        sqlList.Add(updateSchedule)
         Try
-            If dac.InsertMasterData(insertHeader) = True Then
+            If dac.InsertMasterDetail(sqlList) = True Then
                 Return True
             End If
         Catch ex As Exception
@@ -456,8 +464,16 @@ Public Class FrmProduction
     Sub RetrieveDetails()
         Dim queryDetails As String
         Dim dac As DataAccess = New DataAccess
-        queryDetails = "Select * From ProductionDetails Where ProductionCode = '" & strCode & "'"
         Dim dr As MySqlDataReader
+
+        queryDetails = "SELECT proddet.*,nsp.product1,nsp.product2" & vbCrLf
+        queryDetails += ",nsp.product3,nsp.product4,nsp.process1,nsp.process2" & vbCrLf
+        queryDetails += ",nsp.process3,nsp.process4,nsp.process5,nsp.process6" & vbCrLf
+        queryDetails += ",nyl.NoRollNylon,cmp.CompountBatch,cmp.CompountDesc,cmp.CompountExpDate" & vbCrLf
+        queryDetails += "FROM productiondetails as proddet" & vbCrLf
+        queryDetails += "inner join numbersspec as nsp ON nsp.NumberSpec = proddet.NumberSpec" & vbCrLf
+        queryDetails += "inner join nylon as nyl ON nyl.NylonCode = proddet.NylonCode" & vbCrLf
+        queryDetails += "inner join compounts as cmp ON cmp.CompountCode = proddet.CompountCode Where ProductionCode = '" & strCode & "'" & vbCrLf
         Try
             PopulateTreatmentCodeBySchedule()
             PopulateNumberSpec()
@@ -473,27 +489,27 @@ Public Class FrmProduction
                         .Item(0, intbaris).Value = dr.Item("NoRoll")
                         .Item(1, intbaris).Value = dr.Item("TreatmentCode")
                         .Item(2, intbaris).Value = dr.Item("NumberSpec")
-                        .Item(3, intbaris).Value = dr.Item("Supplier")
-                        .Item(4, intbaris).Value = txtProd2.Text
-                        .Item(5, intbaris).Value = txtProd3.Text
-                        .Item(6, intbaris).Value = txtProd4.Text
-                        .Item(7, intbaris).Value = txtProc1.Text
-                        .Item(8, intbaris).Value = txtProc2.Text
-                        .Item(9, intbaris).Value = txtProc3.Text
-                        .Item(10, intbaris).Value = txtProc4.Text
-                        .Item(11, intbaris).Value = txtProc5.Text
-                        .Item(12, intbaris).Value = txtProc6.Text
-                        .Item(13, intbaris).Value = txtSupp.Text
-                        .Item(14, intbaris).Value = dtpInNylon.Value
-                        .Item(15, intbaris).Value = cmbNylon.SelectedValue
-                        .Item(16, intbaris).Value = txtRollNylon.Text
-                        .Item(17, intbaris).Value = cmbCompound.SelectedValue
-                        .Item(18, intbaris).Value = txtBatch.Text
-                        .Item(19, intbaris).Value = txtDesc.Text
-                        .Item(20, intbaris).Value = dtpExpDate.Value
-                        .Item(21, intbaris).Value = txtQtyAct.Text
-                        .Item(22, intbaris).Value = txtQtyMtr.Text
-                        .Item(23, intbaris).Value = txtInfo.Text
+                        .Item(3, intbaris).Value = dr.Item("Product1")
+                        .Item(4, intbaris).Value = dr.Item("Product2")
+                        .Item(5, intbaris).Value = dr.Item("Product3")
+                        .Item(6, intbaris).Value = dr.Item("Product4")
+                        .Item(7, intbaris).Value = dr.Item("Process1")
+                        .Item(8, intbaris).Value = dr.Item("Process2")
+                        .Item(9, intbaris).Value = dr.Item("Process3")
+                        .Item(10, intbaris).Value = dr.Item("Process4")
+                        .Item(11, intbaris).Value = dr.Item("Process5")
+                        .Item(12, intbaris).Value = dr.Item("Process6")
+                        .Item(13, intbaris).Value = dr.Item("Supplier")
+                        .Item(14, intbaris).Value = CStr(dr.Item("DateInNylon"))
+                        .Item(15, intbaris).Value = dr.Item("NylonCode")
+                        .Item(16, intbaris).Value = dr.Item("NoRollNylon")
+                        .Item(17, intbaris).Value = dr.Item("CompountCode")
+                        .Item(18, intbaris).Value = dr.Item("CompountBatch")
+                        .Item(19, intbaris).Value = dr.Item("CompountDesc")
+                        .Item(20, intbaris).Value = dr.Item("CompountExpDate")
+                        .Item(21, intbaris).Value = dr.Item("Actual")
+                        .Item(22, intbaris).Value = dr.Item("QtyMeter")
+                        .Item(23, intbaris).Value = dr.Item("Information")
                         intbaris = intbaris + 1
                     End With
                 End If
@@ -504,8 +520,6 @@ Public Class FrmProduction
     End Sub
 
     Sub PrepareButton(ByVal statBool As Boolean)
-        btnSave.Enabled = statBool
-        btnCancel.Enabled = statBool
         btnPrint.Enabled = statBool
         btnSign.Enabled = statBool
         btnApproved.Enabled = statBool
@@ -519,18 +533,23 @@ Public Class FrmProduction
         ClearProcess()
         ClearProduct()
         GeneratedCode()
+        GenerateNoRoll()
+        GridDetails()
         PopulateCompound()
         PopulateNumberSpec()
         PopulateNylon()
         PopulateScheduleCode()
+        PrepareButton(False)
     End Sub
 
     Sub PreUpdateDisplay()
         RetrieveHeader()
         RetrieveDetails()
+        PrepareButton(True)
     End Sub
 
     Private Sub FrmProduction_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        intbaris = 0
         Select Case statView
             Case "New"
                 PreCreateDisplay()
@@ -539,16 +558,9 @@ Public Class FrmProduction
         End Select
     End Sub
 
-    Private Sub cmbTreatment_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbTreatment.KeyPress
-        If e.KeyChar = Chr(13) Then
+    Private Sub cmbTreatment_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbTreatment.KeyDown
+        If e.KeyCode = Keys.Enter Then
             cmbNumSpec.Focus()
-        End If
-    End Sub
-
-    Private Sub cmbNumSpec_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbNumSpec.KeyPress
-        If e.KeyChar = Chr(13) Then
-            GetNumberSpec()
-            txtSupp.Focus()
         End If
     End Sub
 
@@ -558,15 +570,15 @@ Public Class FrmProduction
         End If
     End Sub
 
-    Private Sub cmbNylon_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbNylon.KeyPress
-        If e.KeyChar = Chr(13) Then
+    Private Sub cmbNylon_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbNylon.KeyDown
+        If e.KeyCode = Keys.Enter Then
             GetNylon()
             cmbCompound.Focus()
         End If
     End Sub
 
-    Private Sub cmbCompound_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbCompound.KeyPress
-        If e.KeyChar = Chr(13) Then
+    Private Sub cmbCompound_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbCompound.KeyDown
+        If e.KeyCode = Keys.Enter Then
             GetCompound()
             txtQtyAct.Focus()
         End If
@@ -601,6 +613,8 @@ Public Class FrmProduction
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
         If CheckIsEmptyDetails() = False Then
             AddGrid()
+            noRoll = noRoll + 1
+            txtNoRoll.Text = noRoll
         End If
     End Sub
 
@@ -611,10 +625,12 @@ Public Class FrmProduction
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
-        If CheckIsEmpty() = False Then
-            If SaveData() = True Then
-                MsgBoxSaved()
-                PreCreateDisplay()
+        If statView = "New" Then
+            If CheckIsEmpty() = False Then
+                If SaveData() = True Then
+                    MsgBoxSaved()
+                    Close()
+                End If
             End If
         End If
     End Sub
@@ -637,28 +653,64 @@ Public Class FrmProduction
     End Sub
 
     Private Sub btnSign_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSign.Click
-
+        If statView = "Update" Then
+            If SignData() = True Then
+                MsgBoxInformation("Data has been sign")
+            End If
+        End If
     End Sub
 
     Private Sub btnApproved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnApproved.Click
-        If ApprovedData() = True Then
-            MsgBoxApproved()
+        If statView = "Update" Then
+            If ApprovedData() = True Then
+                MsgBoxApproved()
+                Close()
+            End If
         End If
     End Sub
 
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
-        If VoidData() = True Then
-            MsgBoxVoid()
+        If statView = "Update" Then
+            If VoidData() = True Then
+                MsgBoxVoid()
+                Close()
+            End If
         End If
     End Sub
 
-    Private Sub cmbSchedule_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbSchedule.KeyPress
-        If e.KeyChar = Chr(13) Then
+    Private Sub cmbSchedule_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbSchedule.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            PopulateTreatmentCodeBySchedule()
             cmbTreatment.Focus()
         End If
     End Sub
 
-    Private Sub cmbSchedule_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbSchedule.SelectedIndexChanged
-        PopulateTreatmentCodeBySchedule()
+    Private Sub cmbNumSpec_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbNumSpec.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            GetNumberSpec()
+            txtSupp.Focus()
+        End If
+    End Sub
+
+    Private Sub cmbSchedule_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbSchedule.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
+    Private Sub cmbTreatment_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbTreatment.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
+    Private Sub cmbNumSpec_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbNumSpec.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
+    Private Sub cmbNylon_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbNylon.KeyPress
+        e.KeyChar = Chr(0)
+    End Sub
+
+    Private Sub dtpInNylon_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dtpInNylon.KeyPress
+        If e.KeyChar = Chr(13) Then
+            cmbNylon.Focus()
+        End If
     End Sub
 End Class

@@ -31,16 +31,31 @@
     Sub MenuLeader()
         menuMaster.Visible = False
         menuTrans.Visible = True
+        menuSchedule.Visible = True
+        menuProd.Visible = True
+        menuScrap.Visible = True
         menuReport.Visible = True
     End Sub
     Sub MenuAdmin()
-        menuMaster.Visible = True
-        menuTrans.Visible = True
+        menuMaster.Visible = False
+        menuTrans.Visible = False
         menuReport.Visible = True
     End Sub
     Sub MenuOperator()
         menuMaster.Visible = False
         menuTrans.Visible = True
+        menuSchedule.Visible = True
+        menuProd.Visible = True
+        menuScrap.Visible = True
+        menuReport.Visible = False
+    End Sub
+    '
+    Sub MenuPPC()
+        menuMaster.Visible = True
+        menuTrans.Visible = True
+        menuSchedule.Visible = True
+        menuProd.Visible = False
+        menuScrap.Visible = False
         menuReport.Visible = False
     End Sub
 
@@ -63,6 +78,8 @@
             MenuLeader()
         ElseIf userAccess = "Production" Then
             MenuOperator()
+        ElseIf userAccess = "PPC" Then
+            MenuPPC()
         End If
     End Sub
 

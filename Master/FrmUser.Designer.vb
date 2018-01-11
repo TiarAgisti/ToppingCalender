@@ -82,7 +82,7 @@ Partial Class FrmUser
         'cmbAccess
         '
         Me.cmbAccess.FormattingEnabled = True
-        Me.cmbAccess.Items.AddRange(New Object() {"Leader", "Admin", "Production"})
+        Me.cmbAccess.Items.AddRange(New Object() {"Leader", "Admin", "Production", "PPC"})
         Me.cmbAccess.Location = New System.Drawing.Point(87, 100)
         Me.cmbAccess.Name = "cmbAccess"
         Me.cmbAccess.Size = New System.Drawing.Size(255, 21)

@@ -525,7 +525,7 @@ Partial Class FrmProduction
         'txtRollNylon
         '
         Me.txtRollNylon.Enabled = False
-        Me.txtRollNylon.Location = New System.Drawing.Point(421, 35)
+        Me.txtRollNylon.Location = New System.Drawing.Point(469, 34)
         Me.txtRollNylon.Name = "txtRollNylon"
         Me.txtRollNylon.Size = New System.Drawing.Size(136, 20)
         Me.txtRollNylon.TabIndex = 15
@@ -533,7 +533,7 @@ Partial Class FrmProduction
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(343, 37)
+        Me.Label21.Location = New System.Drawing.Point(391, 36)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(72, 13)
         Me.Label21.TabIndex = 14
@@ -542,7 +542,7 @@ Partial Class FrmProduction
         'cmbNylon
         '
         Me.cmbNylon.FormattingEnabled = True
-        Me.cmbNylon.Location = New System.Drawing.Point(421, 8)
+        Me.cmbNylon.Location = New System.Drawing.Point(469, 8)
         Me.cmbNylon.Name = "cmbNylon"
         Me.cmbNylon.Size = New System.Drawing.Size(268, 21)
         Me.cmbNylon.TabIndex = 14
@@ -550,7 +550,7 @@ Partial Class FrmProduction
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(343, 11)
+        Me.Label20.Location = New System.Drawing.Point(391, 11)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(34, 13)
         Me.Label20.TabIndex = 15
@@ -574,16 +574,16 @@ Partial Class FrmProduction
         '
         'txtSupp
         '
-        Me.txtSupp.Enabled = False
-        Me.txtSupp.Location = New System.Drawing.Point(90, 5)
+        Me.txtSupp.Location = New System.Drawing.Point(89, 5)
+        Me.txtSupp.MaxLength = 15
         Me.txtSupp.Name = "txtSupp"
-        Me.txtSupp.Size = New System.Drawing.Size(136, 20)
+        Me.txtSupp.Size = New System.Drawing.Size(190, 20)
         Me.txtSupp.TabIndex = 15
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(11, 8)
+        Me.Label18.Location = New System.Drawing.Point(10, 8)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(45, 13)
         Me.Label18.TabIndex = 14
@@ -694,8 +694,8 @@ Partial Class FrmProduction
         '
         'txtInfo
         '
-        Me.txtInfo.Enabled = False
         Me.txtInfo.Location = New System.Drawing.Point(602, 5)
+        Me.txtInfo.MaxLength = 100
         Me.txtInfo.Name = "txtInfo"
         Me.txtInfo.Size = New System.Drawing.Size(385, 20)
         Me.txtInfo.TabIndex = 17
@@ -711,8 +711,8 @@ Partial Class FrmProduction
         '
         'txtQtyMtr
         '
-        Me.txtQtyMtr.Enabled = False
         Me.txtQtyMtr.Location = New System.Drawing.Point(333, 5)
+        Me.txtQtyMtr.MaxLength = 6
         Me.txtQtyMtr.Name = "txtQtyMtr"
         Me.txtQtyMtr.Size = New System.Drawing.Size(136, 20)
         Me.txtQtyMtr.TabIndex = 15
@@ -728,8 +728,8 @@ Partial Class FrmProduction
         '
         'txtQtyAct
         '
-        Me.txtQtyAct.Enabled = False
         Me.txtQtyAct.Location = New System.Drawing.Point(89, 5)
+        Me.txtQtyAct.MaxLength = 6
         Me.txtQtyAct.Name = "txtQtyAct"
         Me.txtQtyAct.Size = New System.Drawing.Size(136, 20)
         Me.txtQtyAct.TabIndex = 13

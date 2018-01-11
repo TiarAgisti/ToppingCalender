@@ -4,11 +4,14 @@ Public Class FrmListScrap
     Dim queryList As String
     Sub HeaderGrid()
         dgv.Columns(0).HeaderText = "Scrap Code"
+        dgv.Columns(0).Width = 150
         dgv.Columns(1).HeaderText = "Date"
         dgv.Columns(1).DefaultCellStyle.Format = "dd-MMM-yyyy"
         dgv.Columns(2).HeaderText = "Machine Code"
+        dgv.Columns(2).Width = 150
         dgv.Columns(3).HeaderText = "Shift"
         dgv.Columns(4).HeaderText = "Production Code"
+        dgv.Columns(4).Width = 150
         dgv.Columns(5).HeaderText = "Status"
     End Sub
     Sub RetriveList()
@@ -19,6 +22,7 @@ Public Class FrmListScrap
         Try
             dgv.DataSource = dac.RetrieveListData(queryList)
             dgv.ReadOnly = True
+            HeaderGrid()
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -62,18 +66,22 @@ Public Class FrmListScrap
     End Sub
 
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
-        FrmScrap.strView = "New"
+        FrmScrap.statView = "New"
         FrmScrap.ShowDialog()
     End Sub
 
     Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
         Dim row As Integer = dgv.CurrentRow.Index
-        FrmScrap.strView = "Update"
+        FrmScrap.statView = "Update"
         FrmScrap.strCode = dgv.Item(0, row).Value
         FrmScrap.ShowDialog()
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
         Close()
+    End Sub
+
+    Private Sub FrmListScrap_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RetriveList()
     End Sub
 End Class

@@ -481,10 +481,8 @@ Public Class FrmSchedule
         End If
     End Sub
 
-    Private Sub cmbMachine_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMachine.Validated
-        If cmbMachine.Text = "" Then
-            cmbMachine.Text = ""
-        Else
+    Private Sub cmbMachine_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbMachine.KeyDown
+        If e.KeyCode = Keys.Enter Then
             ValidatedMachineCode()
         End If
     End Sub
