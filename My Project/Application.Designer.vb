@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ToppingCalender.FrmRptScrap
+            Me.MainForm = Global.ToppingCalender.FrmListProduction
         End Sub
     End Class
 End Namespace
