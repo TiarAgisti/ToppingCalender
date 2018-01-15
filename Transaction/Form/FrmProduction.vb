@@ -519,11 +519,43 @@ Public Class FrmProduction
         End Try
     End Sub
 
+    Sub PrintTreatment()
+        Dim dac As New DataAccess
+        Dim myReport As New CrRptProduction
+        Dim query As String
+        Dim dt As DataTable
+        Dim row As Integer = dgv.CurrentRow.Index
+
+        query = "SELECT prd.ProductionCode,prd.ProductionDate,prd.ExpDate" & vbCrLf
+        query += ",prddet.NoRoll,prddet.TreatmentCode" & vbCrLf
+        query += "FROM productions as prd" & vbCrLf
+        query += "inner join productiondetails as prddet on prd.ProductionCode = prddet.ProductionCode"
+        query += "where prddet.NoRoll = '" & dgv.Item(0, row).Value & "' And prddet.TreatmentCode = '" & dgv.Item(1, row).Value & "'"
+
+        Try
+            Cursor.Current = Cursors.WaitCursor
+            dt = dac.RetrieveListData(query)
+            myReport.SetDataSource(dt)
+            With FrmView
+                .crv.ReportSource = myReport
+                .ShowDialog()
+            End With
+
+            Cursor.Current = Cursors.Default
+        Catch ex As Exception
+            MsgBoxError(ex.Message)
+        End Try
+    End Sub
+
     Sub PrepareButton(ByVal statBool As Boolean)
         btnPrint.Enabled = statBool
         btnSign.Enabled = statBool
         btnApproved.Enabled = statBool
         btnVoid.Enabled = statBool
+    End Sub
+
+    Sub DateAddExpDate()
+        dtpExpDateProd.Value = DateAdd(DateInterval.Day, 3, dtpDate.Value)
     End Sub
 
     Sub PreCreateDisplay()
@@ -540,6 +572,7 @@ Public Class FrmProduction
         PopulateNylon()
         PopulateScheduleCode()
         PrepareButton(False)
+        DateAddExpDate()
     End Sub
 
     Sub PreUpdateDisplay()
@@ -712,5 +745,9 @@ Public Class FrmProduction
         If e.KeyChar = Chr(13) Then
             cmbNylon.Focus()
         End If
+    End Sub
+
+    Private Sub dtpDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpDate.ValueChanged
+        DateAddExpDate()
     End Sub
 End Class

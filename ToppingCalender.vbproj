@@ -145,6 +145,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PrintOut\CrRptProduction.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrRptProduction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintOut\CrScheduleShift3.vb">
+      <DependentUpon>CrScheduleShift3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintOut\CrScheduleShift2.vb">
+      <DependentUpon>CrScheduleShift2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintOut\CrScheduleShift1.vb">
+      <DependentUpon>CrScheduleShift1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintOut\CrScheduleShift.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrScheduleShift.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintOut\CrScrap.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrScrap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintOut\CrTreatment.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrTreatment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\FrmRptProduction.Designer.vb">
       <DependentUpon>FrmRptProduction.vb</DependentUpon>
     </Compile>
@@ -155,6 +197,18 @@
       <DependentUpon>FrmRptSchedule.vb</DependentUpon>
     </Compile>
     <Compile Include="Report\FrmRptSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmRptScrap.Designer.vb">
+      <DependentUpon>FrmRptScrap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmRptScrap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmView.Designer.vb">
+      <DependentUpon>FrmView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Setting\FrmChangePassword.Designer.vb">
@@ -168,6 +222,14 @@
     </Compile>
     <Compile Include="Setting\FrmConfiguration.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toppingcalender.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>toppingcalender.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="toppingcalender.vb">
+      <DependentUpon>toppingcalender.xsd</DependentUpon>
     </Compile>
     <Compile Include="Transaction\Form\FrmProduction.Designer.vb">
       <DependentUpon>FrmProduction.vb</DependentUpon>
@@ -245,11 +307,45 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrRptProduction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrRptProduction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrScheduleShift3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrScheduleShift3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrScheduleShift2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrScheduleShift2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrScheduleShift1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrScheduleShift1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrScheduleShift.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrScheduleShift.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrScrap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrScrap.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOut\CrTreatment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrTreatment.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmRptProduction.resx">
       <DependentUpon>FrmRptProduction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmRptSchedule.resx">
       <DependentUpon>FrmRptSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmRptScrap.resx">
+      <DependentUpon>FrmRptScrap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmView.resx">
+      <DependentUpon>FrmView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.vb</DependentUpon>
@@ -295,6 +391,17 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="toppingcalender.xsc">
+      <DependentUpon>toppingcalender.xsd</DependentUpon>
+    </None>
+    <None Include="toppingcalender.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>toppingcalender.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="toppingcalender.xss">
+      <DependentUpon>toppingcalender.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\add.png" />
@@ -317,7 +424,7 @@
     <Content Include="Images\Search.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PrintOut\" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

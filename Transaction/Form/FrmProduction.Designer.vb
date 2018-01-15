@@ -25,6 +25,8 @@ Partial Class FrmProduction
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProduction))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.cmbShift = New System.Windows.Forms.ComboBox
+        Me.Label30 = New System.Windows.Forms.Label
         Me.dtpExpDateProd = New System.Windows.Forms.DateTimePicker
         Me.Label29 = New System.Windows.Forms.Label
         Me.cmbSchedule = New System.Windows.Forms.ComboBox
@@ -128,6 +130,8 @@ Partial Class FrmProduction
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.cmbShift)
+        Me.Panel1.Controls.Add(Me.Label30)
         Me.Panel1.Controls.Add(Me.dtpExpDateProd)
         Me.Panel1.Controls.Add(Me.Label29)
         Me.Panel1.Controls.Add(Me.cmbSchedule)
@@ -142,8 +146,27 @@ Partial Class FrmProduction
         Me.Panel1.Size = New System.Drawing.Size(999, 69)
         Me.Panel1.TabIndex = 6
         '
+        'cmbShift
+        '
+        Me.cmbShift.FormattingEnabled = True
+        Me.cmbShift.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cmbShift.Location = New System.Drawing.Point(658, 25)
+        Me.cmbShift.Name = "cmbShift"
+        Me.cmbShift.Size = New System.Drawing.Size(121, 21)
+        Me.cmbShift.TabIndex = 12
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(655, 9)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(28, 13)
+        Me.Label30.TabIndex = 13
+        Me.Label30.Text = "Shift"
+        '
         'dtpExpDateProd
         '
+        Me.dtpExpDateProd.Enabled = False
         Me.dtpExpDateProd.Location = New System.Drawing.Point(433, 38)
         Me.dtpExpDateProd.Name = "dtpExpDateProd"
         Me.dtpExpDateProd.Size = New System.Drawing.Size(197, 20)
@@ -990,4 +1013,6 @@ Partial Class FrmProduction
     Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents dtpExpDateProd As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents cmbShift As System.Windows.Forms.ComboBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
 End Class

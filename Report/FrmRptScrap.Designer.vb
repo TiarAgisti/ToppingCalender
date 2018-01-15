@@ -26,14 +26,29 @@ Partial Class FrmRptScrap
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.btnExit = New System.Windows.Forms.Button
-        Me.btnProcess = New System.Windows.Forms.Button
-        Me.dtAkhir = New System.Windows.Forms.DateTimePicker
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.btnProcess2 = New System.Windows.Forms.Button
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.dtpAkhir1 = New System.Windows.Forms.DateTimePicker
+        Me.dtpAwal1 = New System.Windows.Forms.DateTimePicker
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.btnProcess1 = New System.Windows.Forms.Button
+        Me.dtpAwal = New System.Windows.Forms.DateTimePicker
+        Me.dtpAkhir = New System.Windows.Forms.DateTimePicker
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.cmbShift1 = New System.Windows.Forms.ComboBox
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.cmbShift = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
-        Me.dtAwal = New System.Windows.Forms.DateTimePicker
-        Me.rdPeriode = New System.Windows.Forms.RadioButton
-        Me.rdAll = New System.Windows.Forms.RadioButton
+        Me.btnProcess = New System.Windows.Forms.Button
         Me.crv = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.Panel1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -52,90 +67,209 @@ Partial Class FrmRptScrap
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnExit)
-        Me.Panel1.Controls.Add(Me.btnProcess)
-        Me.Panel1.Controls.Add(Me.dtAkhir)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.dtAwal)
-        Me.Panel1.Controls.Add(Me.rdPeriode)
-        Me.Panel1.Controls.Add(Me.rdAll)
+        Me.Panel1.Controls.Add(Me.GroupBox3)
+        Me.Panel1.Controls.Add(Me.GroupBox2)
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 39)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1081, 138)
+        Me.Panel1.Size = New System.Drawing.Size(1081, 145)
         Me.Panel1.TabIndex = 9
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(102, 92)
+        Me.btnExit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
+        Me.btnExit.Location = New System.Drawing.Point(1000, 0)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 23)
-        Me.btnExit.TabIndex = 6
+        Me.btnExit.Size = New System.Drawing.Size(79, 143)
+        Me.btnExit.TabIndex = 20
         Me.btnExit.Text = "Exit"
+        Me.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnProcess
+        'GroupBox3
         '
-        Me.btnProcess.Location = New System.Drawing.Point(21, 92)
-        Me.btnProcess.Name = "btnProcess"
-        Me.btnProcess.Size = New System.Drawing.Size(75, 23)
-        Me.btnProcess.TabIndex = 5
-        Me.btnProcess.Text = "Process"
-        Me.btnProcess.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.btnProcess2)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.dtpAkhir1)
+        Me.GroupBox3.Controls.Add(Me.dtpAwal1)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GroupBox3.Location = New System.Drawing.Point(738, 0)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(262, 143)
+        Me.GroupBox3.TabIndex = 19
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Filter"
         '
-        'dtAkhir
+        'btnProcess2
         '
-        Me.dtAkhir.Location = New System.Drawing.Point(272, 67)
-        Me.dtAkhir.Name = "dtAkhir"
-        Me.dtAkhir.Size = New System.Drawing.Size(200, 20)
-        Me.dtAkhir.TabIndex = 4
+        Me.btnProcess2.Location = New System.Drawing.Point(9, 114)
+        Me.btnProcess2.Name = "btnProcess2"
+        Me.btnProcess2.Size = New System.Drawing.Size(75, 23)
+        Me.btnProcess2.TabIndex = 13
+        Me.btnProcess2.Text = "Process"
+        Me.btnProcess2.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 61)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(33, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "S / D"
+        '
+        'dtpAkhir1
+        '
+        Me.dtpAkhir1.Location = New System.Drawing.Point(9, 85)
+        Me.dtpAkhir1.Name = "dtpAkhir1"
+        Me.dtpAkhir1.Size = New System.Drawing.Size(200, 20)
+        Me.dtpAkhir1.TabIndex = 16
+        '
+        'dtpAwal1
+        '
+        Me.dtpAwal1.Location = New System.Drawing.Point(9, 34)
+        Me.dtpAwal1.Name = "dtpAwal1"
+        Me.dtpAwal1.Size = New System.Drawing.Size(200, 20)
+        Me.dtpAwal1.TabIndex = 14
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 18)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(30, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Date"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnProcess1)
+        Me.GroupBox2.Controls.Add(Me.dtpAwal)
+        Me.GroupBox2.Controls.Add(Me.dtpAkhir)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.cmbShift1)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GroupBox2.Location = New System.Drawing.Point(220, 0)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(518, 143)
+        Me.GroupBox2.TabIndex = 18
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Filter"
+        '
+        'btnProcess1
+        '
+        Me.btnProcess1.Location = New System.Drawing.Point(59, 86)
+        Me.btnProcess1.Name = "btnProcess1"
+        Me.btnProcess1.Size = New System.Drawing.Size(75, 23)
+        Me.btnProcess1.TabIndex = 9
+        Me.btnProcess1.Text = "Process"
+        Me.btnProcess1.UseVisualStyleBackColor = True
+        '
+        'dtpAwal
+        '
+        Me.dtpAwal.Location = New System.Drawing.Point(59, 60)
+        Me.dtpAwal.Name = "dtpAwal"
+        Me.dtpAwal.Size = New System.Drawing.Size(200, 20)
+        Me.dtpAwal.TabIndex = 9
+        '
+        'dtpAkhir
+        '
+        Me.dtpAkhir.Location = New System.Drawing.Point(304, 60)
+        Me.dtpAkhir.Name = "dtpAkhir"
+        Me.dtpAkhir.Size = New System.Drawing.Size(200, 20)
+        Me.dtpAkhir.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(15, 66)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(30, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Date"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(265, 64)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "S / D"
+        '
+        'cmbShift1
+        '
+        Me.cmbShift1.FormattingEnabled = True
+        Me.cmbShift1.Items.AddRange(New Object() {"All", "1", "2", "3"})
+        Me.cmbShift1.Location = New System.Drawing.Point(59, 28)
+        Me.cmbShift1.Name = "cmbShift1"
+        Me.cmbShift1.Size = New System.Drawing.Size(121, 21)
+        Me.cmbShift1.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(15, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Shift"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.cmbShift)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.btnProcess)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(220, 143)
+        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Filter"
+        '
+        'cmbShift
+        '
+        Me.cmbShift.FormattingEnabled = True
+        Me.cmbShift.Items.AddRange(New Object() {"All", "1", "2", "3"})
+        Me.cmbShift.Location = New System.Drawing.Point(59, 31)
+        Me.cmbShift.Name = "cmbShift"
+        Me.cmbShift.Size = New System.Drawing.Size(121, 21)
+        Me.cmbShift.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(227, 73)
+        Me.Label2.Location = New System.Drawing.Point(15, 34)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "S / D"
+        Me.Label2.Size = New System.Drawing.Size(28, 13)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Shift"
         '
-        'dtAwal
+        'btnProcess
         '
-        Me.dtAwal.Location = New System.Drawing.Point(21, 66)
-        Me.dtAwal.Name = "dtAwal"
-        Me.dtAwal.Size = New System.Drawing.Size(200, 20)
-        Me.dtAwal.TabIndex = 2
-        '
-        'rdPeriode
-        '
-        Me.rdPeriode.AutoSize = True
-        Me.rdPeriode.Location = New System.Drawing.Point(21, 44)
-        Me.rdPeriode.Name = "rdPeriode"
-        Me.rdPeriode.Size = New System.Drawing.Size(90, 17)
-        Me.rdPeriode.TabIndex = 1
-        Me.rdPeriode.TabStop = True
-        Me.rdPeriode.Text = "Period Report"
-        Me.rdPeriode.UseVisualStyleBackColor = True
-        '
-        'rdAll
-        '
-        Me.rdAll.AutoSize = True
-        Me.rdAll.Location = New System.Drawing.Point(21, 12)
-        Me.rdAll.Name = "rdAll"
-        Me.rdAll.Size = New System.Drawing.Size(71, 17)
-        Me.rdAll.TabIndex = 0
-        Me.rdAll.TabStop = True
-        Me.rdAll.Text = "All Report"
-        Me.rdAll.UseVisualStyleBackColor = True
+        Me.btnProcess.Location = New System.Drawing.Point(59, 61)
+        Me.btnProcess.Name = "btnProcess"
+        Me.btnProcess.Size = New System.Drawing.Size(75, 23)
+        Me.btnProcess.TabIndex = 7
+        Me.btnProcess.Text = "Process"
+        Me.btnProcess.UseVisualStyleBackColor = True
         '
         'crv
         '
         Me.crv.ActiveViewIndex = -1
         Me.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crv.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.crv.Location = New System.Drawing.Point(0, 177)
+        Me.crv.Location = New System.Drawing.Point(0, 184)
         Me.crv.Name = "crv"
         Me.crv.SelectionFormula = ""
-        Me.crv.Size = New System.Drawing.Size(1081, 394)
+        Me.crv.Size = New System.Drawing.Size(1081, 387)
         Me.crv.TabIndex = 10
         Me.crv.ViewTimeSelectionFormula = ""
         '
@@ -156,18 +290,35 @@ Partial Class FrmRptScrap
         Me.Text = "FrmRptScrap"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnExit As System.Windows.Forms.Button
-    Friend WithEvents btnProcess As System.Windows.Forms.Button
-    Friend WithEvents dtAkhir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnProcess2 As System.Windows.Forms.Button
+    Friend WithEvents dtpAwal1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents dtpAkhir1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnProcess1 As System.Windows.Forms.Button
+    Friend WithEvents dtpAwal As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpAkhir As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents cmbShift1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents cmbShift As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents dtAwal As System.Windows.Forms.DateTimePicker
-    Friend WithEvents rdPeriode As System.Windows.Forms.RadioButton
-    Friend WithEvents rdAll As System.Windows.Forms.RadioButton
+    Friend WithEvents btnProcess As System.Windows.Forms.Button
     Friend WithEvents crv As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

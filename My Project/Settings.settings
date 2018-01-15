@@ -12,7 +12,7 @@
       <Value Profile="(Default)">root</Value>
     </Setting>
     <Setting Name="passwordUser" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">tiara123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

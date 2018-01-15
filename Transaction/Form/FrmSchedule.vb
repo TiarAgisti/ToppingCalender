@@ -327,7 +327,7 @@ Public Class FrmSchedule
         Dim sqlList As List(Of String) = New List(Of String)
 
         insertHeader = "insert into schedules values('" & txtCode.Text & "','" & Format(dtpDate.Value, "yyyy-MM-dd") & "','" & txtRev.Text & "','1'" & vbCrLf
-        insertHeader += ",'" & Format(Now, "yyyy-MM-dd") & "','" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "','" & userCode & "')"
+        insertHeader += ",'" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "','" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "')"
         sqlList.Add(insertHeader)
 
         For detail = 0 To Me.dgv.Rows.Count - 2
