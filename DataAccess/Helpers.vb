@@ -36,6 +36,26 @@
         Dim result As DialogResult = MessageBox.Show("Are you sure want to exit application?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         Return result
     End Function
+    Public Function MsgBoxQuestionSave() As DialogResult
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to save?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Return result
+    End Function
+    Public Function MsgBoxQuestionUpdate() As DialogResult
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to update?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Return result
+    End Function
+    Public Function MsgBoxQuestionDelete() As DialogResult
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to delete?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Return result
+    End Function
+    Public Function MsgBoxQuestionApprove() As DialogResult
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to approve?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Return result
+    End Function
+    Public Function MsgBoxQuestionVoid() As DialogResult
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to void?", title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Return result
+    End Function
     Public Sub ValidationNumber(ByVal txt As TextBox)
         If txt.Text = "" Then
             txt.Text = ""

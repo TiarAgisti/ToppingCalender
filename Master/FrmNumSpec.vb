@@ -360,19 +360,25 @@ Public Class FrmNumSpec
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
+        Dim result As DialogResult = MsgBoxQuestionSave()
         If CheckIsEmpty() = False Then
-            If SaveData() = True Then
-                MsgBoxSaved()
-                PreCreateDisplay()
+            If result = MsgBoxResult.Yes Then
+                If SaveData() = True Then
+                    MsgBoxSaved()
+                    PreCreateDisplay()
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
+        Dim result As DialogResult = MsgBoxQuestionUpdate()
         If CheckIsEmpty() = False Then
-            If UpdateData() = True Then
-                MsgBoxUpdated()
-                PreCreateDisplay()
+            If result = MsgBoxResult.Yes Then
+                If UpdateData() = True Then
+                    MsgBoxUpdated()
+                    PreCreateDisplay()
+                End If
             End If
         End If
     End Sub
@@ -382,9 +388,12 @@ Public Class FrmNumSpec
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
-        If DeletedData() = True Then
-            MsgBoxDeleted()
-            PreCreateDisplay()
+        Dim result As DialogResult = MsgBoxQuestionDelete()
+        If result = MsgBoxResult.Yes Then
+            If DeletedData() = True Then
+                MsgBoxDeleted()
+                PreCreateDisplay()
+            End If
         End If
     End Sub
 

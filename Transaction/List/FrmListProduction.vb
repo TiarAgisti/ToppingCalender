@@ -12,12 +12,13 @@ Public Class FrmListProduction
         dgv.Columns(2).DefaultCellStyle.Format = "dd-MMM-yyyy"
         dgv.Columns(3).HeaderText = "Schedule Code"
         dgv.Columns(3).Width = 150
-        dgv.Columns(4).HeaderText = "Status"
+        dgv.Columns(4).HeaderText = "Shift"
+        dgv.Columns(5).HeaderText = "Status"
     End Sub
 
     Sub RetriveList()
         Dim dac As DataAccess = New DataAccess
-        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,shift,Case When Status = 1 Then 'New'" & vbCrLf
         queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
         queryList += "From Productions"
         Try
@@ -31,7 +32,7 @@ Public Class FrmListProduction
     End Sub
 
     Sub RetrieveListSearch()
-        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,Case When Status = 1 Then 'New'" & vbCrLf
+        queryList = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode,shift,Case When Status = 1 Then 'New'" & vbCrLf
         queryList += "When Status = 2 Then 'Revision' When Status = 3 Then 'Approved' Else 'Void' End StatDesc" & vbCrLf
         queryList += "From Productions" & vbCrLf
 

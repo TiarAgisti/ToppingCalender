@@ -184,6 +184,10 @@ Public Class FrmSchedule
                 .Item(22, intbaris).Value = txtDesc3.Text
                 intbaris = intbaris + 1
             End With
+            ClearDetails()
+            ClearShift1()
+            ClearShift2()
+            ClearShift3()
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -281,6 +285,10 @@ Public Class FrmSchedule
     Sub PreUpdateDisplay()
         RetrieveHeader()
         RetrieveDetails()
+        ClearDetails()
+        ClearShift1()
+        ClearShift2()
+        ClearShift3()
         PrepareButton(True)
     End Sub
 
@@ -318,6 +326,7 @@ Public Class FrmSchedule
         Else
             stat = False
         End If
+        Return stat
     End Function
 
     Function SaveData() As Boolean
@@ -669,14 +678,24 @@ Public Class FrmSchedule
         If CheckIsEmpty() = False Then
             Select Case statView
                 Case "New"
-                    If SaveData() = True Then
-                        MsgBoxSaved()
-                        Close()
+                    Dim result As DialogResult = MsgBoxQuestionSave()
+                    If CheckIsEmpty() = False Then
+                        If result = MsgBoxResult.Yes Then
+                            If SaveData() = True Then
+                                MsgBoxSaved()
+                                PreCreateDisplay()
+                            End If
+                        End If
                     End If
                 Case "Update"
-                    If UpdateData() = True Then
-                        MsgBoxUpdated()
-                        Close()
+                    Dim result As DialogResult = MsgBoxQuestionUpdate()
+                    If CheckIsEmpty() = False Then
+                        If result = MsgBoxResult.Yes Then
+                            If UpdateData() = True Then
+                                MsgBoxUpdated()
+                                PreCreateDisplay()
+                            End If
+                        End If
                     End If
             End Select
         End If
@@ -696,16 +715,22 @@ Public Class FrmSchedule
     End Sub
 
     Private Sub btnApproved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnApproved.Click
-        If ApprovedData() = True Then
-            MsgBoxApproved()
-            Close()
+        Dim result As DialogResult = MsgBoxQuestionApprove()
+        If result = MsgBoxResult.Yes Then
+            If ApprovedData() = True Then
+                MsgBoxApproved()
+                Close()
+            End If
         End If
     End Sub
 
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
-        If VoidData() = True Then
-            MsgBoxVoid()
-            Close()
+        Dim result As DialogResult = MsgBoxQuestionVoid()
+        If result = MsgBoxResult.Yes Then
+            If VoidData() = True Then
+                MsgBoxVoid()
+                Close()
+            End If
         End If
     End Sub
 End Class

@@ -93,13 +93,16 @@ Public Class FrmScrap
 
         query = "Select NoRoll,TreatmentCode From productiondetails where ProductionCode = '" & cmbProduct.Text & "'"
         Try
+            dgv.Columns.Clear()
+            GridDetail()
+            intbaris = 0
             dr = dac.ExecuteReader(query)
             While dr.Read
                 If Not IsDBNull(dr.Item("TreatmentCode")) Then
                     With dgv
                         .Rows.Add()
-                        .Item(0, intbaris).Value = dr.Item("NoRoll")
-                        .Item(1, intbaris).Value = dr.Item("TreatmentCode")
+                        .Item(0, intbaris).Value = dr.Item("TreatmentCode")
+                        .Item(1, intbaris).Value = dr.Item("NoRoll")
                         .Item(2, intbaris).Value = 0
                         .Item(3, intbaris).Value = 0
                         .Item(4, intbaris).Value = 0
@@ -114,6 +117,7 @@ Public Class FrmScrap
                         .Item(13, intbaris).Value = 0
                         .Item(14, intbaris).Value = 0
                         .Item(15, intbaris).Value = 0
+                        intbaris = intbaris + 1
                     End With
                 End If
             End While
@@ -133,7 +137,7 @@ Public Class FrmScrap
         sqlList.Add(insertHeader)
 
         For detail = 0 To Me.dgv.Rows.Count - 2
-            insertDetail = "insert into scrapproductiondetails values('" & txtCode.Text & "','" & Me.dgv.Rows(detail).Cells(1).Value & "','" & Me.dgv.Rows(detail).Cells(0).Value & "'" & vbCrLf
+            insertDetail = "insert into scrapproductiondetails values('" & txtCode.Text & "','" & Me.dgv.Rows(detail).Cells(0).Value & "','" & Me.dgv.Rows(detail).Cells(1).Value & "'" & vbCrLf
             insertDetail += ",'" & Me.dgv.Rows(detail).Cells(2).Value & "','" & Me.dgv.Rows(detail).Cells(3).Value & "','" & Me.dgv.Rows(detail).Cells(4).Value & "'" & vbCrLf
             insertDetail += ",'" & Me.dgv.Rows(detail).Cells(5).Value & "','" & Me.dgv.Rows(detail).Cells(6).Value & "','" & Me.dgv.Rows(detail).Cells(7).Value & "'" & vbCrLf
             insertDetail += ",'" & Me.dgv.Rows(detail).Cells(8).Value & "','" & Me.dgv.Rows(detail).Cells(9).Value & "','" & Me.dgv.Rows(detail).Cells(10).Value & "'" & vbCrLf
@@ -302,10 +306,13 @@ Public Class FrmScrap
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If statView = "New" Then
+            Dim result As DialogResult = MsgBoxQuestionSave()
             If CheckIsEmpty() = False Then
-                If SaveData() = True Then
-                    MsgBoxSaved()
-                    Close()
+                If result = MsgBoxResult.Yes Then
+                    If SaveData() = True Then
+                        MsgBoxSaved()
+                        PreCreateDisplay()
+                    End If
                 End If
             End If
         End If
@@ -322,18 +329,24 @@ Public Class FrmScrap
 
     Private Sub btnApproved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnApproved.Click
         If statView = "Update" Then
-            If ApprovedData() = True Then
-                MsgBoxApproved()
-                Close()
+            Dim result As DialogResult = MsgBoxQuestionApprove()
+            If result = MsgBoxResult.Yes Then
+                If ApprovedData() = True Then
+                    MsgBoxApproved()
+                    Close()
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
         If statView = "Update" Then
-            If VoidData() = True Then
-                MsgBoxVoid()
-                Close()
+            Dim result As DialogResult = MsgBoxQuestionVoid()
+            If result = MsgBoxResult.Yes Then
+                If VoidData() = True Then
+                    MsgBoxVoid()
+                    Close()
+                End If
             End If
         End If
     End Sub

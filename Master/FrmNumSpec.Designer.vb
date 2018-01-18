@@ -93,7 +93,7 @@ Partial Class FrmNumSpec
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 39)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(685, 174)
+        Me.Panel1.Size = New System.Drawing.Size(685, 155)
         Me.Panel1.TabIndex = 6
         '
         'GroupBox2
@@ -110,7 +110,7 @@ Partial Class FrmNumSpec
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtProc1)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(266, 74)
+        Me.GroupBox2.Location = New System.Drawing.Point(270, 59)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(410, 82)
         Me.GroupBox2.TabIndex = 7
@@ -229,7 +229,7 @@ Partial Class FrmNumSpec
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtProd1)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 74)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 59)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(246, 82)
         Me.GroupBox1.TabIndex = 6
@@ -306,7 +306,7 @@ Partial Class FrmNumSpec
         '
         'txtDesc
         '
-        Me.txtDesc.Location = New System.Drawing.Point(100, 48)
+        Me.txtDesc.Location = New System.Drawing.Point(100, 33)
         Me.txtDesc.MaxLength = 100
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(412, 20)
@@ -315,7 +315,7 @@ Partial Class FrmNumSpec
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 51)
+        Me.Label4.Location = New System.Drawing.Point(11, 36)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 4
@@ -323,7 +323,7 @@ Partial Class FrmNumSpec
         '
         'txtCode
         '
-        Me.txtCode.Location = New System.Drawing.Point(100, 22)
+        Me.txtCode.Location = New System.Drawing.Point(100, 7)
         Me.txtCode.MaxLength = 8
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(242, 20)
@@ -332,7 +332,7 @@ Partial Class FrmNumSpec
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 25)
+        Me.Label2.Location = New System.Drawing.Point(11, 10)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(72, 13)
         Me.Label2.TabIndex = 0
@@ -348,7 +348,7 @@ Partial Class FrmNumSpec
         Me.Panel2.Controls.Add(Me.btnSave)
         Me.Panel2.Controls.Add(Me.btnAdd)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 213)
+        Me.Panel2.Location = New System.Drawing.Point(0, 194)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(685, 57)
         Me.Panel2.TabIndex = 7
@@ -429,7 +429,7 @@ Partial Class FrmNumSpec
         '
         Me.GroupBox3.Controls.Add(Me.txtCari)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 270)
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 251)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(685, 68)
         Me.GroupBox3.TabIndex = 8
@@ -447,9 +447,9 @@ Partial Class FrmNumSpec
         '
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv.Location = New System.Drawing.Point(0, 338)
+        Me.dgv.Location = New System.Drawing.Point(0, 319)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(685, 417)
+        Me.dgv.Size = New System.Drawing.Size(685, 218)
         Me.dgv.TabIndex = 20
         '
         'FrmNumSpec
@@ -457,7 +457,7 @@ Partial Class FrmNumSpec
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(685, 755)
+        Me.ClientSize = New System.Drawing.Size(685, 537)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Panel2)

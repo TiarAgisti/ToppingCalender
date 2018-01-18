@@ -94,15 +94,13 @@ Public Class FrmCompound
         Dim dac As DataAccess = New DataAccess
         Dim dr As MySqlDataReader
         Dim query As String
-        query = "Select Count(compountcode) as count from compounts where compountcode = '" & txtCode.Text & "'"
+        query = "Select Count(compountcode) as count from compounts where compountcode = '" & txtCode.Text & "' and compountbatch = '" & txtBatch.Text & "'"
         Try
             dr = dac.ExecuteReader(query)
             dr.Read()
-            If dr.Item("count") = 0 Then
-                txtBatch.Focus()
-            Else
-                MsgBoxWarning("Compound code is available")
-                txtCode.Clear()
+            If dr.Item("count") > 0 Then
+                MsgBoxWarning("Compound code and batch is available")
+                txtBatch.Clear()
             End If
             dr.Close()
         Catch ex As Exception
@@ -175,15 +173,7 @@ Public Class FrmCompound
 
     Private Sub txtCode_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCode.KeyPress
         If e.KeyChar = Chr(13) Then
-            CheckCode()
-        End If
-    End Sub
-
-    Private Sub txtCode_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCode.Validated
-        If txtCode.Text = "" Then
-            txtCode.Text = ""
-        Else
-            CheckCode()
+            txtBatch.Focus()
         End If
     End Sub
 
@@ -203,19 +193,25 @@ Public Class FrmCompound
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
+        Dim result As DialogResult = MsgBoxQuestionSave()
         If CheckIsEmpty() = False Then
-            If SaveData() = True Then
-                MsgBoxSaved()
-                PreCreateDisplay()
+            If result = MsgBoxResult.Yes Then
+                If SaveData() = True Then
+                    MsgBoxSaved()
+                    PreCreateDisplay()
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
+        Dim result As DialogResult = MsgBoxQuestionUpdate()
         If CheckIsEmpty() = False Then
-            If UpdateData() = True Then
-                MsgBoxUpdated()
-                PreCreateDisplay()
+            If result = MsgBoxResult.Yes Then
+                If UpdateData() = True Then
+                    MsgBoxUpdated()
+                    PreCreateDisplay()
+                End If
             End If
         End If
     End Sub
@@ -225,9 +221,12 @@ Public Class FrmCompound
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
-        If DeletedData() = True Then
-            MsgBoxDeleted()
-            PreCreateDisplay()
+        Dim result As DialogResult = MsgBoxQuestionDelete()
+        If result = MsgBoxResult.Yes Then
+            If DeletedData() = True Then
+                MsgBoxDeleted()
+                PreCreateDisplay()
+            End If
         End If
     End Sub
 
@@ -254,5 +253,13 @@ Public Class FrmCompound
                 MsgBoxWarning("Data not available")
             End If
         End With
+    End Sub
+
+    Private Sub txtBatch_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtBatch.Validated
+        If txtBatch.Text = "" Then
+            txtBatch.Text = ""
+        Else
+            CheckCode()
+        End If
     End Sub
 End Class

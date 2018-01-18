@@ -267,7 +267,7 @@ Partial Class FrmCompound
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv.Location = New System.Drawing.Point(0, 302)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(586, 303)
+        Me.dgv.Size = New System.Drawing.Size(586, 290)
         Me.dgv.TabIndex = 8
         '
         'FrmCompound
@@ -275,7 +275,7 @@ Partial Class FrmCompound
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(586, 605)
+        Me.ClientSize = New System.Drawing.Size(586, 592)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)

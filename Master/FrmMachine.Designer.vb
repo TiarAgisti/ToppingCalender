@@ -215,7 +215,7 @@ Partial Class FrmMachine
         Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv.Location = New System.Drawing.Point(0, 259)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(525, 408)
+        Me.dgv.Size = New System.Drawing.Size(525, 244)
         Me.dgv.TabIndex = 5
         '
         'FrmMachine
@@ -223,7 +223,7 @@ Partial Class FrmMachine
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(525, 667)
+        Me.ClientSize = New System.Drawing.Size(525, 503)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)

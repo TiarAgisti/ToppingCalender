@@ -254,6 +254,7 @@ Public Class FrmProduction
 
     Sub ClearHeader()
         cmbSchedule.Text = ""
+        cmbShift.Text = ""
     End Sub
 
     Sub ClearDetails()
@@ -273,6 +274,9 @@ Public Class FrmProduction
         ElseIf Trim(cmbSchedule.Text) = String.Empty Then
             MsgBoxWarning("Please choose schedule")
             cmbSchedule.Focus()
+        ElseIf Trim(cmbShift.Text) = String.Empty Then
+            MsgBoxWarning("Please choose shift")
+            cmbShift.Focus()
         ElseIf dgv.RowCount = 1 Then
             MsgBoxWarning("Please fill details")
             cmbTreatment.Focus()
@@ -343,6 +347,10 @@ Public Class FrmProduction
                 .Item(23, intbaris).Value = txtInfo.Text
                 intbaris = intbaris + 1
             End With
+            ClearDetails()
+            ClearCompound()
+            ClearProcess()
+            ClearProduct()
         Catch ex As Exception
             MsgBoxError(ex.Message)
         End Try
@@ -361,7 +369,8 @@ Public Class FrmProduction
         Dim dac As DataAccess = New DataAccess
 
         insertHeader = "insert into Productions values('" & txtCode.Text & "','" & Format(dtpDate.Value, "yyyy-MM-dd") & "','" & Format(dtpExpDateProd.Value, "yyyy-MM-dd") & "'" & vbCrLf
-        insertHeader += ",'" & cmbSchedule.SelectedValue & "',1,'" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "','" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "')"
+        insertHeader += ",'" & cmbShift.Text & "','" & cmbSchedule.SelectedValue & "',1,'" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "'" & vbCrLf
+        insertHeader += ",'" & userCode & "','" & Format(Now, "yyyy-MM-dd") & "')"
         sqlList.Add(insertHeader)
 
         For detail = 0 To Me.dgv.Rows.Count - 2
@@ -442,7 +451,7 @@ Public Class FrmProduction
     Sub RetrieveHeader()
         Dim queryHeader As String
         Dim dac As DataAccess = New DataAccess
-        queryHeader = "Select ProductionCode,ProductionDate,ExpDate,ScheduleCode From Productions Where ProductionCode = '" & strCode & "'"
+        queryHeader = "Select ProductionCode,ProductionDate,ExpDate,shift,ScheduleCode From Productions Where ProductionCode = '" & strCode & "'"
         Dim dr As MySqlDataReader
         Try
             PopulateScheduleCode()
@@ -452,6 +461,7 @@ Public Class FrmProduction
                 txtCode.Text = dr.Item("ProductionCode")
                 dtpDate.Value = dr.Item("ProductionDate")
                 dtpExpDateProd.Value = dr.Item("ExpDate")
+                cmbShift.Text = dr.Item("shift")
                 cmbSchedule.SelectedValue = dr.Item("ScheduleCode")
             End If
             dr.Close()
@@ -521,7 +531,7 @@ Public Class FrmProduction
 
     Sub PrintTreatment()
         Dim dac As New DataAccess
-        Dim myReport As New CrRptProduction
+        Dim myReport As New CrTreatment
         Dim query As String
         Dim dt As DataTable
         Dim row As Integer = dgv.CurrentRow.Index
@@ -529,7 +539,7 @@ Public Class FrmProduction
         query = "SELECT prd.ProductionCode,prd.ProductionDate,prd.ExpDate" & vbCrLf
         query += ",prddet.NoRoll,prddet.TreatmentCode" & vbCrLf
         query += "FROM productions as prd" & vbCrLf
-        query += "inner join productiondetails as prddet on prd.ProductionCode = prddet.ProductionCode"
+        query += "inner join productiondetails as prddet on prd.ProductionCode = prddet.ProductionCode" & vbCrLf
         query += "where prddet.NoRoll = '" & dgv.Item(0, row).Value & "' And prddet.TreatmentCode = '" & dgv.Item(1, row).Value & "'"
 
         Try
@@ -578,6 +588,10 @@ Public Class FrmProduction
     Sub PreUpdateDisplay()
         RetrieveHeader()
         RetrieveDetails()
+        ClearDetails()
+        ClearCompound()
+        ClearProcess()
+        ClearProduct()
         PrepareButton(True)
     End Sub
 
@@ -659,10 +673,13 @@ Public Class FrmProduction
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If statView = "New" Then
+            Dim result As DialogResult = MsgBoxQuestionSave()
             If CheckIsEmpty() = False Then
-                If SaveData() = True Then
-                    MsgBoxSaved()
-                    Close()
+                If result = MsgBoxResult.Yes Then
+                    If SaveData() = True Then
+                        MsgBoxSaved()
+                        PreCreateDisplay()
+                    End If
                 End If
             End If
         End If
@@ -695,18 +712,24 @@ Public Class FrmProduction
 
     Private Sub btnApproved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnApproved.Click
         If statView = "Update" Then
-            If ApprovedData() = True Then
-                MsgBoxApproved()
-                Close()
+            Dim result As DialogResult = MsgBoxQuestionApprove()
+            If result = MsgBoxResult.Yes Then
+                If ApprovedData() = True Then
+                    MsgBoxApproved()
+                    Close()
+                End If
             End If
         End If
     End Sub
 
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
         If statView = "Update" Then
-            If VoidData() = True Then
-                MsgBoxVoid()
-                Close()
+            Dim result As DialogResult = MsgBoxQuestionVoid()
+            If result = MsgBoxResult.Yes Then
+                If VoidData() = True Then
+                    MsgBoxVoid()
+                    Close()
+                End If
             End If
         End If
     End Sub

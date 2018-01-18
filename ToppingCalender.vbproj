@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5537E40B-AC93-4CF1-BAA9-47DA5F448F70}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -337,15 +337,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmRptProduction.resx">
       <DependentUpon>FrmRptProduction.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmRptSchedule.resx">
       <DependentUpon>FrmRptSchedule.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmRptScrap.resx">
       <DependentUpon>FrmRptScrap.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmView.resx">
       <DependentUpon>FrmView.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.vb</DependentUpon>
