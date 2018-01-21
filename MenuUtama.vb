@@ -118,7 +118,8 @@
     Private Sub menuExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuExit.Click
         Dim result As DialogResult = MsgBoxQuestionExit()
         If result = MsgBoxResult.Yes Then
-            Application.Exit()
+            FrmLogin.Show()
+            Me.Hide()
         End If
     End Sub
 

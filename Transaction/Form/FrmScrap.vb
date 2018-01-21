@@ -279,7 +279,12 @@ Public Class FrmScrap
 
 
     Sub PreUpdateDisplay()
-        PrepareButton(True)
+        If userAccess = "Leader" Then
+            PrepareButton(True)
+        Else
+            PrepareButton(False)
+        End If
+
         RetrieveHeader()
         RetrieveDetails()
     End Sub

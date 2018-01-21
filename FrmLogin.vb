@@ -28,6 +28,8 @@ Public Class FrmLogin
             drUsers = dac.ExecuteReader(query)
             drUsers.Read()
             If drUsers.HasRows Then
+                txtCode.Clear()
+                txtPassword.Clear()
                 userCode = drUsers.Item("UserCode")
                 userName = drUsers.Item("UserName")
                 userAccess = drUsers.Item("AccessLevel")

@@ -289,7 +289,15 @@ Public Class FrmSchedule
         ClearShift1()
         ClearShift2()
         ClearShift3()
-        PrepareButton(True)
+        If userAccess = "PPC" Then
+            PrepareButton(True)
+            btnSave.Enabled = True
+            btnCancel.Enabled = True
+        Else
+            PrepareButton(False)
+            btnSave.Enabled = False
+            btnCancel.Enabled = False
+        End If
     End Sub
 
     Function CheckIsEmpty() As Boolean

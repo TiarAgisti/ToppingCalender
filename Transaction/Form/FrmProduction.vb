@@ -592,7 +592,11 @@ Public Class FrmProduction
         ClearCompound()
         ClearProcess()
         ClearProduct()
-        PrepareButton(True)
+        If userAccess = "Leader" Then
+            PrepareButton(True)
+        Else
+            PrepareButton(False)
+        End If
     End Sub
 
     Private Sub FrmProduction_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

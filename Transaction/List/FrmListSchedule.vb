@@ -73,6 +73,15 @@ Public Class FrmListSchedule
     End Sub
 
     Private Sub FrmListSchedule_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If userAccess = "PPC" Then
+            btnAdd.Enabled = True
+            btnEdit.Enabled = True
+            btnEdit.Text = "Edit"
+        Else
+            btnAdd.Enabled = False
+            btnEdit.Enabled = True
+            btnEdit.Text = "View"
+        End If
         RetriveList()
     End Sub
 End Class
